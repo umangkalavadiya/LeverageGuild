@@ -1,0 +1,75 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.images{
+    height: 650px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bd-example{
+    margin-top: 5px;
+}
+.animated-button {
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 10px rgb(17, 0, 255);
+  }
+  .icon-box:hover{
+    box-shadow: 0 0 10px rgb(17, 0, 255);
+  }
+
+
+  .sun-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .light-mode {
+    background-color: white;
+    color: black;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+
+  .icon-box {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .icon-box i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .icon-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .icon-box p {
+    font-size: 16px;
+  }
+  
+.text{
+    font-size: 24px;
+    text-align: center;
+}
+
+.text-left {
+  text-align: left !important;
+  margin-left: 80%; 
+}
+
+
+ 
