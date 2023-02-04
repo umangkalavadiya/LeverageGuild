@@ -1,0 +1,286 @@
+{% comment %} <!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Information</title>
+  </head>
+  <body>
+    <h1>Student Information</h1>
+    <form
+      action="{% url 'sprofile:profile' %}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <h2>Personal Information</h2>
+
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name"/><br/>
+
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name"/><br/>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"/><br/>
+
+      <label for="date_of_birth">Date_of_birth:</label>
+      <input type="date" id="date_of_birth" name="date_of_birth"/><br/>
+
+      <label for="gender">Gender:</label>
+      <input type="radio" name="gender" value="male"/> Male
+      <input type="radio" name="gender" value="female"/> Female
+      <input type="radio" name="gender" value="other"/> Other <br/>
+
+      <label for="address">Address:</label>
+      <input type="textfield" id="address" name="address"/><br/>
+
+      <label for="phone">Phone:</label>
+      <input type="number" id="phone" name="phone"/><br/>
+
+      <h2>Academic Information</h2>
+
+      <label for="current_degree">Current Degree:</label>
+      <input type="text" id="current_degree" name="current_degree"/><br/>
+
+      <label for="current_gpa">Current GPA:</label>
+      <input type="number" step="0.01" id="current_gpa" name="current_gpa"/><br/>
+     
+      <label for="gre_score">GRE score</label>
+      <input type="number" id="gre_score" name="gre_score"/><br/>
+
+      <label for="ilets_score">ILETS score</label>
+      <input type="number" id="ilets_score" name="ilets_score"/><br/>
+      
+      <label for="research_experience">Research Experience</label>
+      <input type="radio" name="research_experience" value=1/> True
+      <input type="radio" name="research_experience" value=0/> False
+      <br/>
+      <label for="lor">LOR</label>
+      <input type="number" id="lor" name="lor"/><br/>
+
+
+      <h2>Financial Information</h2>
+
+      <label for="family_income">Family_income:</label>
+      <input type="number" id="family_income" name="family_income"/><br/>
+
+      <h2>Extra Curricular Activities Information</h2>
+
+      <label for="activities">Extra Curricular Activities:</label><br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Sports"/>Sports<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Music"/>Music<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Arts"/>Arts<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="learn new language"/>Learn new language(french,german etc)<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Dance"/>Dance<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Volunteering"/>Volunteering<br/>
+      <input type="checkbox" id="id_activities" name="activities" value="Others" />Others<br/>
+
+
+      <h2>Work Experience and Internship Information</h2>
+
+      <label for="work_experience">Work Experience</label>
+      <input type="radio" name="work_experience" value=1/> True
+      <input type="radio" name="work_experience" value=0/> False
+      <br/>
+
+      <label for="internships">Internship Experience:</label>
+      <input type="radio" name="internships" value=1/> True
+      <input type="radio" name="internships" value=0/> False
+      </br>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html> {% endcomment %}
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="userprofile.css">
+    <title>profile</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- Pie chart here -->pie chart here
+          
+          <div class="pie-chart"></div>
+        </div>
+        <div class="col-md-9">
+          <div class="user-profile">
+            <!-- Personal details section -->
+            <div class="mb-3">
+              <div class="section-title">Personal Details</div>
+              <div class="section-body">
+                <!-- Personal details content here -->
+                <div class="form-group">
+                  <label for="fname">First Name:</label>
+                  <input type="text" class="form-control" id="fname" placeholder="Enter The First Name">
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name:</label>
+                  <input type="text" class="form-control" id="lname" placeholder="Enter The Last Name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <input type="text" class="form-control" id="address" placeholder="Enter your address">
+                </div>
+                <div class="form-group">
+                  <label for="dob">Date of Birth:</label>
+                  <input type="date" class="form-control" id="dob" placeholder="Enter your date of birth">
+                </div>
+                {% comment %} <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <input type="text" class="form-control" id="gender" placeholder="Enter your gender">
+                </div> {% endcomment %}
+                {% comment %} <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="male" name="gender" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="others" name="gender" value="others">
+                    <label class="form-check-label" for="others">Others</label>
+                  </div>
+                </div> {% endcomment %}
+                <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="gender">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="gender">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                    <label class="form-check-label" for="gender">Other</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone:</label>
+                  <input type="text" class="form-control" id="phone" placeholder="Enter your phone number">
+                </div>
+              </div>
+            </div>
+            <!-- Academic details section -->
+            <div class="mb-3">
+              <div class="section-title">Academic Details</div>
+              <div class="section-body">
+                <!-- Academic details content here -->
+                
+                <div class="form-group">
+                  <label for="current_degree">Current Degree:</label>
+                  <input type="text" class="form-control" id="current_degree" placeholder="Enter your current degree">
+                </div>
+                <div class="form-group">
+                  <label for="current_gpa">Current GPA:</label>
+                  <input type="text" class="form-control" id="current_gpa" placeholder="Enter your current GPA">
+                </div>
+                <div class="form-group">
+                  <label for="gre_score">GRE Score:</label>
+                  <input type="text" class="form-control" id="gre_score" placeholder="Enter your GRE score">
+                </div>
+                <div class="form-group">
+                  <label for="ilets_score">IELTS Score:</label>
+                  <input type="text" class="form-control" id="ilets_score" placeholder="Enter your IELTS score">
+                </div>
+                {% comment %} <div class="form-group">
+                  <label for="research_experience">Research Experience:</label>
+                  <input type="text" class="form-control" id="research_experience" placeholder="Enter your research experience">
+                </div> {% endcomment %}
+                <div class="form-group">
+                  <label for="research_experience">Research Experience:</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="research_experience" id="research_experience_yes" value="1">
+                    <label class="form-check-label" for="research_experience_yes">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="research_experience" id="research_experience_no" value="0">
+                    <label class="form-check-label" for="research_experience_no">No</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="letter_of_recommendation">Letter of Recommendation:</label>
+                  <input type="text" class="form-control" id="letter_of_recommendation" placeholder="Enter your letter of recommendation">
+                </div>
+              </div>
+            </div>
+            <!-- Family information section -->
+            <div>
+              <div class="section-title">Family Information</div>
+              <div class="section-body">
+                <!-- Family information content here -->
+                <div class="form-group">
+                  <label for="family_income">Family Income:</label>
+                  <input type="text" class="form-control" id="family_income" placeholder="Enter your family income">
+                </div>
+                <div class="form-group">
+                  <label for="activities">Extra Curricular Activities:</label>
+                  <div class="form-group">
+                    <label for="sports">Sports:</label>
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="sports_yes" name="sports" value="1">
+                      <label class="form-check-label" for="sports_yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="sports_no" name="sports" value="0">
+                      <label class="form-check-label" for="sports_no">No</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="speak_french">Speak French:</label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="speak_french_radio" id="speak_french_yes" value="1">
+                      <label class="form-check-label" for="speak_french_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="speak_french_radio" id="speak_french_no" value="0">
+                      <label class="form-check-label" for="speak_french_no">No</label>
+                    </div>
+                  </div>  
+
+
+                </div>
+                <div class="form-group">
+                  <label for="work_experience">Work Experience:</label>
+                  <input type="text" class="form-control" id="work_experience" placeholder="Enter your work experience">
+                </div>
+                <div class="form-group">
+                  <label for="internships">Internships:</label>
+                  <input type="text" class="form-control" id="internships" placeholder="Enter your internships">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

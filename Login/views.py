@@ -27,7 +27,7 @@ def about(request):
 # Create your views here.
 @login_required(login_url= LOGIN_REDIRECT_URL)
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 
 def signUp(request):

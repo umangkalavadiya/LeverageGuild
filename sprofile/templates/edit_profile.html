@@ -1,0 +1,11 @@
+<h1>edit_profile</h1>
+
+
+<div class="edit_profile">
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{user_form.as_p}}
+        {{sprofile_form.as_p}}
+        <center><input type="submit"></center><br/>
+      <center><button><a href="{% url 'Login:Login' %}">Logout</a></button></center>
+    </form>
+</div> 
