@@ -1,70 +1,128 @@
 body{
-    font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
+
 .images{
-    height: 650px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  height: 650px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.bd-example{
-    margin-top: 5px;
-}
+
 .animated-button {
-    border-radius: 12px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .animated-button:hover {
-    box-shadow: 0 0 10px rgb(17, 0, 255);
-  }
-  .icon-box:hover{
-    box-shadow: 0 0 10px rgb(17, 0, 255);
-  }
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 10px rgb(17, 0, 255);
+}
+.icon-box:hover{
+  box-shadow: 0 0 10px rgb(17, 0, 255);
+}
 
 
-  .sun-icon {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .light-mode {
-    background-color: white;
-    color: black;
-  }
-  
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
+.sun-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.light-mode {
+  background-color: white;
+  color: black;
+}
 
-  .icon-box {
-    text-align: center;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .icon-box i {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .icon-box h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .icon-box p {
-    font-size: 16px;
-  }
-  
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.icon-box {
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.icon-box i {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.icon-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.icon-box p {
+  font-size: 16px;
+}
+
 .text{
-    font-size: 24px;
-    text-align: center;
+  font-size: 24px;
+  text-align: center;
 }
 
 .text-left {
-  text-align: left !important;
-  margin-left: 80%; }
+text-align: left !important;
+margin-left: 80%; 
+}
+
+
+
+.card {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-title,.card:hover .card-text {
+  color: white;
+}
+
+.card i {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.card-text {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+
+
+
+#mission .card:hover {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+#mission .card h3, #mission .card p {
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+#mission .card:hover h3, #mission .card:hover p {
+  color: #fff;
+}
+.foot{
+  margin-left:-8px;
+  margin-right: -8px;
+  margin-bottom: -110px;
+
+}
+
