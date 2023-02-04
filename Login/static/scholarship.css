@@ -1,0 +1,15 @@
+.card-header {
+    background-color: #707477;
+    color: #fff;
+  }
+  .card-header h5 {
+    margin: 0;
+    font-weight: bold;
+  }
+  .card-body {
+    padding: 1.25rem;
+  }
+  .card-body p {
+    margin: 0;
+    font-size: 14px;
+  }

@@ -3,14 +3,15 @@
   <head>
     <link rel="stylesheet" href="{% static 'login.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/4378b71530.css" crossorigin="anonymous">
-   
   </head>
   <body>
     <div class="login-fg">
         <div class="container-fluid">
             <div class="row">
+                <!-- <img   class="col-xl-8 col-lg-7 col-md-12 bg" scr="{% static 'login.jpg' %}"> -->
+
                 <div class="col-xl-8 col-lg-7 col-md-12 bg" style="background-image:url('{% static 'img/login.jpg' %}') ">
+                    
                 </div>
                 <div class="col-xl-4 col-lg-5 col-md-12 login">
                     <div class="login-section">
@@ -19,7 +20,7 @@
                                 Stud4U
                             </a>
                         </div>
-                        <h3>Sign in into your account</h3>
+                        <h3>Forget Password</h3>
                        
                        
                         <div class="form-container">
@@ -32,36 +33,24 @@
                         {% for message in messages %}
                         <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
                             <strong>{{ message }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         {% endfor %}
                     </ul>
                     {% endif %}
-                                <div class="form-group form-fg">
-                                    <input type="text" name="username" class="input-text" id="username" placeholder="Username" required> 
-                
-                                   
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    
-                                </div>
-                                <div class="form-group form-fg">
-                                    <input type="password" name="password" id="password" class="input-text" placeholder="Password" required> 
-                
-                                    <i class="fa fa-unlock-alt"></i>
-                                </div>
-                                <div class="checkbox clearfix">
-                                    
-                                    <a class="forgot" href="{% url 'Login:ForgetPassword' %}">Forgot password?</a> 
-                                    
-                                </div>
+                    <div class="form-group form-fg">
+                        <input type="email" name="email" id="email"  class="input-text" placeholder="Email" required> 
+    
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                              
                                 <div class="form-group mt-2">
-                                    <button type="submit" value="Login" class="btn-md btn-fg btn-block">Login</button>
+                                    <button type="submit" value="Next" class="btn-md btn-fg btn-block">Next</button>
                                 </div>
                             </form>
                         </div>
                         <p>Don't have an account? <a  class="linkButton" href="{% url 'Login:SignUp' %}">SignUp</a></p>
+                        <p>Already have an account? <a class="forgot" href="{% url 'Login:Login' %}">Login</a></p>
                     </div>
                 </div>
             </div>
@@ -74,5 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
 
 

@@ -1,7 +1,6 @@
 body{
     font-family: 'Times New Roman', Times, serif;
 }
-
 .images{
     height: 650px;
     width: 100%;
@@ -68,8 +67,4 @@ body{
 
 .text-left {
   text-align: left !important;
-  margin-left: 80%; 
-}
-
-
- 
+  margin-left: 80%; }

@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'university.css' %}s">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav class=" navbar sticky-top navbar-expand-lg navbar-dark bg-dark light-mode">
+        <a class="navbar-brand" href="#">Stud4U</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'Login:home' %}">Home</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'Login:scholarship' %}">Scholarship</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Login:university' %}">University</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'Login:about' %}">About</a>
+            </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link btn btn-primary" href="{% url 'Login:Login' %}" style="color: white; background-color: black;">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="{% url 'Login:SignUp' %}" style="color: white; background-color: black;">Signup</a>
+          </li>
+          </ul>
+        </div>
+        <div class="ml-auto">
+            <i class="fas fa-sun sun-icon ml-2"></i>
+          </div>
+      </nav>
+    <!-- navigationbar -->
+    
+    
+    
+    <div class="container my-5">
+        <h1 class="text-center">List of Universities</h1>
+        <hr>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="card">
+              <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+              <div class="card-body">
+                <h5 class="card-title">University of ABC</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                </p>
+                <a href="#" class="btn btn-primary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card">
+              <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+              <div class="card-body">
+                <h5 class="card-title">University of DEF</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                </p>
+                <a href="#" class="btn btn-primary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card">
+              <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+              <div class="card-body">
+                <h5 class="card-title">University of GHI</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                </p>
+                <a href="#" class="btn btn-primary">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of ABC</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of DEF</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of GHI</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of ABC</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of DEF</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of GHI</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of ABC</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of DEF</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="University Logo">
+                <div class="card-body">
+                  <h5 class="card-title">University of GHI</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit nulla, eu placerat ipsum consectetur a.
+                  </p>
+                  <a href="#" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+       
+</body>
+</html>

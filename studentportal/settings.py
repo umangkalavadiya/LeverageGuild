@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login',
+    'Login',
 ]
 
 MIDDLEWARE = [
@@ -119,8 +119,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_REDIRECT_URL = '/login'
+LOGIN_REDIRECT_URL = '/login'
+
+# Gmail SMTP
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'digique0@gmail.com'
+EMAIL_HOST_PASSWORD = 'cgzxcslbvmuuypoj'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
