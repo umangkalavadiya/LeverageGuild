@@ -1,22 +1,32 @@
 .university-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  .university-card img {
-    width: 100%;
-    border-radius: 50%
-  }
-  .university-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  .university-info {
-    font-size: 1.2em;
-    margin-top: 20px;
-    text-align: justify;
-  }
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.university-card img {
+  width: 100%;
+  border-radius: 30%
+}
+img{
+  width: 200px;
+  height: 300px;
+}
+body{
+  background-color: #ccc;
+}
+.university-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.university-info {
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-align: justify;
+}
+h5  .card-title:hover {
+  color: black;
+}
