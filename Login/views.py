@@ -1,5 +1,6 @@
-from django.shortcuts import render
 
+import requests
+from django.http import JsonResponse
 # Create your views here.
 import re
 from django.core import mail
@@ -13,6 +14,132 @@ from .models import Profile
 import uuid
 from studentportal.settings import *
 from django.contrib.auth.decorators import login_required
+from sprofile.models import Sprofile
+
+
+
+def parul(request):
+    data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    data1 = Sprofile.objects.all().filter(user=request.user)[0].sports
+    
+    context = {
+        'data': data,
+        'data1': data1,
+        
+    }
+    return render(request, 'parul.html',context)
+
+def iis(request):
+    
+    return render(request, 'iis.html')
+def amity(request):
+    amity_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    amity_data1 = Sprofile.objects.all().filter(user=request.user)[0].sports
+    
+    context = {
+        'amity_data': amity_data,
+        'amity_data1': amity_data1,
+        
+    }
+    return render(request, 'amity.html',context)
+
+def bits(request):
+    amity_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    amity_data1 = Sprofile.objects.all().filter(user=request.user)[0].gender
+    
+    context = {
+        'amity_data': amity_data,
+        'amity_data1': amity_data1,
+        
+    }
+    return render(request, 'bits.html',context)
+
+def Ottawauni(request):
+    ottawauni_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    ottawauni_data1 = Sprofile.objects.all().filter(user=request.user)[0].gender
+    ottawauni_data2 = Sprofile.objects.all().filter(user=request.user)[0].sports
+
+    
+    context = {
+        'ottawauni_data': ottawauni_data,
+        'ottawauni_data1': ottawauni_data1,
+        'ottawauni_data2': ottawauni_data2,
+        
+    }
+    return render(request, 'UOttawauni.html',context)
+
+def UofAuckland(request):
+    auckland_data= Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    auckland_data1= Sprofile.objects.all().filter(user=request.user)[0].gender
+    auckland_data2= Sprofile.objects.all().filter(user=request.user)[0].sports
+
+    context = {
+        'auckland_data': auckland_data,
+        'auckland_data1': auckland_data1,
+        'auckland_data2': auckland_data2,
+        
+    }
+    return render(request, 'UofAuckland.html',context)
+def UIUCuni(request):
+    uiu_data= Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    uiu_data1= Sprofile.objects.all().filter(user=request.user)[0].sports
+
+    context = {
+        'uiu_data': uiu_data,
+        'uiu_data1': uiu_data1,
+        
+    }
+    return render(request, 'UIUCuni.html',context)
+
+def Queenmary(request):
+    queenmary_data= Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    queenmary_data1= Sprofile.objects.all().filter(user=request.user)[0].sports
+    queenmary_data2 = Sprofile.objects.all().filter(user=request.user)[0].gender
+
+    context = {
+        'queenmary_data': queenmary_data,
+        'queenmary_data1': queenmary_data1,
+        'queenmary_data2': queenmary_data2,
+        
+    }
+    return render(request, 'Queenmary.html',context)
+
+def Griffithuni(request):
+    griffith_data= Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    griffith_data1= Sprofile.objects.all().filter(user=request.user)[0].sports
+
+    context = {
+        'griffith_data': griffith_data,
+        'griffith_data1': griffith_data1,
+        
+    }
+    return render(request, 'Griffithuni.html',context)
+from django.shortcuts import render
+import requests
+
+def generate_essay(request):
+    api_key = "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"
+    model = "text-davinci-002"
+    prompt = "write me an application letter for parul university"
+
+    response = requests.post(
+        "https://api.openai.com/v1/completions",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        },
+        json={
+            "model": "text-davinci-002",
+            "prompt": prompt,
+            "temperature": 0.5,
+            "max_tokens": 2048,
+        },
+    )
+
+    essay = response.json()["choices"][0]["text"]
+    return render(request, "application.html", {"essay": essay})
+
+
 
 
 def home(request):

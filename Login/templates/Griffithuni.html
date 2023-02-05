@@ -1,0 +1,149 @@
+{%load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>University of Illinois at Urbana-Champaign</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="{% static alluni.css %}">
+    </head>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: justify;
+			padding: 20px;
+		}
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			margin-bottom: 30px;
+		}
+		ul {
+			list-style-type: square;
+			margin-left: 40px;
+			margin-bottom: 20px;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		strong {
+			font-weight: bold;
+		}
+	</style>
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>Griffith University</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+						<li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+				<h1>We know the world can, and should, be a better place—for everyone.</h1>
+                <h2>Be here be remarable</h2>
+				<p>Since 1975, our teaching and research have been focused on addressing the most important social and environmental issues of our time. Today, that mission is as relevant as ever.</p>
+                <p>Social and environmental responsibility drive everything we do, from pioneering teaching in modern Asian studies and environmental science to our long-time support for First Peoples, social justice and sustainable practices.</p>
+                <p>Consistently ranking in the top 2 per cent of universities globally, our degrees are designed with industry in mind, the future in our sights, and social impact at heart.</p>
+			</div>
+		</section>
+        
+		<section class="container my-5" id="team">
+            <h1>Academic Entry Requirements for Master's in Information Technology</h1>
+	<ul>
+		<li><strong>Bachelor Degree in Information Technology:</strong> A Bachelor degree in Information Technology from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is required. Students with a Bachelor degree in Information Technology may be eligible for 40 credit points of advanced standing in place of listed IT foundation courses as determined by the Program Director.</li>
+		<li><strong>Bachelor Degree in Unrelated Discipline:</strong> A Bachelor degree in an unrelated discipline from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is also accepted.</li>
+	</ul>
+	<p>If you do not meet the academic entry criteria, you may be able to study the Masters Qualifying Program (9354) and qualify for entry into this Masters degree.</p>
+	<h2>English Language Requirements</h2>
+	<p>English language requirements apply to International applicants and other applicants whose previous study was undertaken in a language other than English. The minimum English language requirements for such applicants for entry to this program are as follows:</p>
+	<ul>
+		<li><strong>IELTS (Academic):</strong> A minimum overall band score of 6.5 with no sub-score of less than 6.0</li>
+		<li><strong>TOEFL:</strong> A minimum score of 575 on TOEFL or an internet-based (iBT) TOEFL score of 79 (no sub-score less than 19)</li>
+		<li><strong>ISLPR:</strong> No score less than 3+ in each skill of the ISLPR (conducted by ISLPR Language Services only)</li>
+		<li><strong>C1 Advanced or C2 Proficiency:</strong> A minimum overall score of 176 (no score less than 169) on C1 Advanced (formerly Cambridge Certificate in Advanced English) or C2 Proficiency (formerly Cambridge Certificate of Proficiency in English)</li>
+		<li><strong>Pearson Test of English (Academic):</strong> An overall score of 58 with no score less than 50</li>
+	</ul>
+          <div class="card-container" id="product">
+            <div class="card" id="high-gpa" style="display: none;>
+              <div class="card-header">
+                <h3>Griffith remarkable</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card" id="low-gpa" style="display: none;>
+              <div class="card-header">
+                <h3>Griffith's deans list</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card" id="avg-gpa" style="display: none;>
+              <div class="card-header">
+                <h3>Griffith's international schoalr</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+		 
+		<script>
+			var gpa = {{ griffith_data }};
+			var sports ={{ griffith_data1 }};
+			if (gpa >= 8 ) {
+			  document.getElementById("high-gpa").style.display = "block";
+			} elif (gpa >= 8 && sports == "	Yes") {
+			  document.getElementById("low-gpa").style.display = "block";
+			}
+			elif (gpa==75)
+			{
+			  document.getElementById("avg-gpa").style.display = "block";
+			}
+			else{
+							  document.getElementById("None").style.display = "block";
+			}
+		  </script>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="{% static alluni.js %}"></script>
+    </body>
+</html>

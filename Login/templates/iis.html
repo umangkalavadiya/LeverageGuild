@@ -1,0 +1,112 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>IIS-Banglore</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="{% static 'alluni.css' %}">
+    </head>
+    <style>
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: justify;
+        font-family: 'Times New Roman', Times, serif;
+        
+      }
+      
+      h2, h3 {
+        text-align: center;
+      }
+    </style>
+      
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>Indian Institute of Science-Banglore</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+                <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+				
+				<h2>For a world where student come first</h2>
+                <p>IISc Bangalore is a premier research institute in India, offering a Computer Science program for students to pursue higher education and research in the field. The Department of Computer Science and Automation at IISc offers a PhD program, a Master's degree program (M.Tech) and a dual degree program (M.Tech-PhD).</p>
+                <p>The program covers a wide range of topics in computer science, including algorithms, data structures, computer networks, databases, programming languages, computer graphics, artificial intelligence, and more. Students are trained in cutting-edge research and technologies and are encouraged to work on original research projects under the guidance of faculty members.</p>
+                <p>The program is highly competitive and attracts top students from across the country. Graduates of the program are well-equipped to work in academia, research, and industry and are highly sought after by top organizations.</p>
+            </div>
+		</section>
+        
+		<section class="container my-5" id="team">
+            <div class="container content">
+                <h2>IISc Bangalore M.Tech Selection Criteria</h2>
+                <p>Admission to the M.Tech program will be granted on the basis of a valid score in GATE Entrance Exam. For some specializations, candidates are also required to appear in the written test or personal interview rounds as conducted by the institute itself.</p>
+                <h3>Given below is the specialization-wise selection criteria required for IISc Bangalore MTech admissions:</h3>
+                <ul>
+                  <li>
+                    <strong>Departments /Programmes:</strong> Aerospace Engineering, Chemical Engineering, Civil Engineering, Instrumentation Systems, Materials Engineering
+                    <br> <br><strong>Selection procedure:</strong> Based on 100% GATE score. Tie Breaking: In case of candidates with equal GATE score, their performance in the qualifying examination will be used to resolve the tie.
+                  </li>
+                  <li>
+                    <strong>Departments /Programmes:</strong> Bioengineering, Climate Science, Earth Science, Electrical Engineering, Electronics and Communication Engineering, Electronic Product Design, Electronic Systems Engineering, Mechanical Engineering, Microelectronics and VLSI Design, Nano Science and Engineering, Quantum Technology, Robotics and Autonomous Systems, Signal Processing
+                    <br><br><strong>Selection procedure:</strong> Based on 70% GATE score + 30% performance in interview.
+                  </li>
+                  <li>
+                    <strong>Departments /Programmes:</strong> Artificial Intelligence, Computer Science and Engineering
+                    <br><br><strong>Selection procedure:</strong> Based on 70% GATE score + 30% performance in written test.
+                  </li>
+                  <li>
+                    <strong>Departments /Programmes:</strong> Computational & Data Sciences, Smart Manufacturing
+                    <br><br><strong>Selection procedure:</strong> Based on 70% GATE score + 30% performance in written test and interview.
+                  </li>
+                </ul>
+              </div>
+              
+          </section>
+          <div class="card-container" id="product">
+            <div class="card" >
+              <div class="card-header">
+                <h3>IIS banglore, merit scholarship</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+		<!-- jQuery -->
+    
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="{% static 'alluni.js' %}"></script>
+    </body>
+</html>

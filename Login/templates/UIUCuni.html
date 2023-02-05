@@ -1,0 +1,153 @@
+{% load static % }
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>University of Illinois at Urbana-Champaign</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="{% static alluni.css %}">
+    </head>
+    <style>
+        .admission-requirements,.container {
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          width:80%;
+          line-height: 1.5;
+          padding: 20px;
+          margin: auto;
+          background-color: #f8f8f8;
+          border: 1px solid #ddd;
+        }
+  
+        .admission-requirements h2 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+  
+        .admission-requirements ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+  
+        .admission-requirements li {
+          margin-bottom: 20px;
+        }
+  
+        .admission-requirements strong {
+          display: block;
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        title{
+            margin: auto;
+        }
+      </style>
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>University of Illinois at Urbana-Champaign</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+                <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+				<h1>Fostering discovery and innovation is our fundamental mission.</h1>
+                <h2>Illinois students, scholars, and alumni are a community with the power to change the world.</h2>
+				<p>With our land-grant heritage as a foundation, we pioneer innovative research that tackles global problems and expands the human experience. Our transformative learning experiences, in and out of the classroom, are designed to produce alumni who desire to make a significant, societal impact.</p>
+                <p>We will be the pre-eminent* public research university with a land-grant mission and global impact. Since its founding in 1867, the University of Illinois Urbana-Champaign has earned a reputation as a world-class leader in research, teaching, and public engagement.</p>
+			</div>
+		</section>
+        
+		<section class="container my-5" id="team">
+            <h2>Admission Requirements</h2>
+      <ul>
+        <li>
+          <p><strong>Degree:</strong></p>
+          <p>Applicants must have earned at least a bachelor's degree from a regionally accredited college in the United States or a comparable degree from a recognized institution of higher learning abroad.</p>
+        </li>
+        <li>
+          <p><strong>GPA:</strong></p>
+          <p>A grade point average (GPA) of 3.0 (A=4.0), or comparable GPA for an international applicant, for the last two years of undergraduate study is a minimum requirement for admission. If your undergraduate study is longer than 4 years, additional semesters may be used to calculate the admission GPA. Please note that proposed programs of study may require a higher GPA than the Graduate College's minimum standard.</p>
+        </li>
+        <li>
+          <p><strong>Conditional Admission:</strong></p>
+          <p>Applicants enrolled in the final year of a bachelor's degree from an accredited college in the United States or a comparable degree program from a recognized institution of higher learning abroad, and who meet the GPA requirements stated above, will be admitted conditionally pending receipt of final academic credentials showing the undergraduate degree as conferred.</p>
+        </li>
+        <li>
+          <p><strong>International Applicants:</strong></p>
+          <p>International applicants must meet minimum requirements based on their country of origin. Please note that proposed programs of study may require a higher GPA than the Graduate College's minimum standard.</p>
+          <p><strong>English Proficiency:</strong> International applicants are required to submit proof of English proficiency. Specific requirements and waiver options are available.</p>
+        </li>
+      </ul>
+          </section>
+          <div class="card-container" id="product">
+            <div class="card" style="display: none;">
+              <div class="card-header">
+                <h3>UIUC, Champaign Scholar program</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card" style="display: none;">
+              <div class="card-header">
+                <h3>UIUC, Oosegood Scholar</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+     
+    <script>
+      var gpa = {{ uiu_data }};
+      var sports ={{ uiu_data1 }};
+      if (gpa >= 8 && sports=="Yes") { ) {
+        document.getElementById("high-gpa").style.display = "block";
+      } elif (gpa>=9) {
+        document.getElementById("low-gpa").style.display = "block";
+      }
+      else
+      {
+        document.getElementById("None").style.display = "block";
+      }
+    </script>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="{% static 'alluni.js' %}"></script>
+    </body>
+</html>

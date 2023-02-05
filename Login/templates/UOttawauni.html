@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>University of Ottawa</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="alluni.css">
+    </head>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: justify;
+			padding: 20px;
+		}
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			margin-bottom: 30px;
+		}
+		ul {
+			list-style-type: square;
+			margin-left: 40px;
+			margin-bottom: 20px;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		strong {
+			font-weight: bold;
+		}
+	</style>
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>University of Ottawa</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+                        <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+				<h1>God is the master of the sciences</h1>
+				<p>The University of Ottawa is the largest bilingual (English-French) university in the world. Located in the heart of Canada’s capital, we have ready access to the great institutions of our country.</p>
+                <p>We are building the University of Tomorrow. Two decades into the 21st century, having taken stock of our extraordinary growth, we look to the future with confidence, ambition and vision, poised to complete our metamorphosis into an illustrious internationally-engaged university. Jacques Frémont, President and Vice-Chanc “Transformatio</p>
+			</div>
+		</section>
+        
+		<section class="container my-5" id="team">
+            <div class="admission-requirements">
+                <h1>Admission Requirements for Graduate Studies at the University of Ottawa</h1>
+	<p>The department/school of the University of Ottawa in which the applicant intends to pursue graduate study must approve the application and the applicant's proposed program. In addition, applicants must be recommended for admission by the Associate Dean (Graduate Studies) of the appropriate Faculty. At the discretion of the committee, an applicant may be required to write a set of qualifying examinations.</p>
+	<p>Official admission to any program of graduate studies is in the form of an "Offer of Admission" issued only by Graduate Studies and Postdoctoral Affairs (GSPA).</p>
+	<p>For further information, prospective graduate students should contact the department/school to which they seek admission.</p>
+	<ul>
+		<li><strong>Minimum admission requirement:</strong> A 75% overall standing in the last two years, or equivalent, in a four-year Honours Bachelor's degree or equivalent is the minimum requirement for admission to a Master's program. Departments and Faculties may set higher admission requirements.</li>
+		<li><strong>Letters of reference:</strong> A minimum of two letters of reference are required for admission to a Master's program. Academic references are required unless a professional reference is specified (see program admission requirements). Departments or Faculties may set higher requirements.</li>
+		<li><strong>Approved universities and colleges:</strong> Information on approved universities and colleges is available in Graduate Studies and Postdoctoral Affairs (GSPA).</li>
+	</ul>
+          <div class="card-container" id="product">
+            <div class="card">
+              <div class="card-header">
+                <h3>Scholarship 1</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header">
+                <h3>Scholarship 2</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header">
+                <h3>Scholarship 3</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+		 
+		<script>
+			var gpa = {{ data }};
+			var sports ={{ data1 }};
+			if (gpa >= 7 ) {
+			  document.getElementById("high-gpa").style.display = "block";
+			} elif (data1=="Yes") {
+			  document.getElementById("low-gpa").style.display = "block";
+			}
+			else
+			{
+			  document.getElementById("None").style.display = "block";
+			}
+		  </script>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="alluni.js"></script>
+    </body>
+</html>

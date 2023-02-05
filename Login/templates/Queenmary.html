@@ -1,0 +1,175 @@
+{% load static % }
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Queen's Marry University</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="{% static alluni.css %}">
+    </head>
+    <style>
+        .admission-requirements {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+          color: #333;
+        }
+        .admission-requirements h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+         }
+
+        .admission-requirements ul {
+         list-style: none;
+         padding-left: 0;
+         margin-bottom: 20px;
+         }
+
+        .admission-requirements li {
+          margin-bottom: 10px;
+        }
+
+        .admission-requirements .requirement-title {
+              font-weight: bold;
+        }
+        title{
+          margin: auto;
+        }
+      </style>
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>Queen's Marry University</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+                <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+				<h1>With united powers</h1>
+                <h2>At Queen Mary University of London, we believe that a diversity of ideas helps us achieve the previously unthinkable.</h2>
+				<p>Throughout our history, we’ve fostered social justice and improved lives through academic excellence. And we continue to live and breathe this spirit today, not because it’s simply ‘the right thing to do’ but for what it helps us achieve and the intellectual brilliance it delivers.</p>
+                <p>Our reformer heritage informs our conviction that great ideas can and should come from anywhere. It’s an approach that has brought results across the globe, from the communities of east London to the favelas of Rio de Janeiro.</p>
+                <p>We continue to embrace diversity of thought and opinion in everything we do, in the belief that when views collide, disciplines interact, and perspectives intersect, truly original thought takes form.</p>
+			</div>
+		</section>
+        
+		<section class="container my-5" id="team">
+            <div class="admission-requirements">
+                <h3>Admission Requirements</h3>
+                <ul>
+                  <li>
+                    <span class="requirement-title">First Degree:</span>
+                    Achieve at least a pass in a full first degree that is equivalent to a UK undergraduate degree, with a pass in all final year modules.
+                  </li>
+                  <li>
+                    <span class="requirement-title">Diploma of Higher Education:</span>
+                    Alternatively, achieve at least 55% overall in a UK Diploma of Higher Education (level 5) or overseas equivalent, with a pass in all final year modules.
+                  </li>
+                  <li>
+                    Awards with failed modules in the final year of academic study will be considered on a case by case basis.
+                  </li>
+                </ul>
+                <h3>Pre-Masters in Humanities and Social Sciences</h3>
+                <ul>
+                  <li>Any degree subject can be considered.</li>
+                </ul>
+                <h3>Pre-Masters in Finance and Economics</h3>
+                <ul>
+                  <li>
+                    Students must have a satisfactory existing level of Mathematics, Statistics or Quantitative Methods.
+                  </li>
+                  <li>
+                    We welcome students from a variety of disciplines, including Accountancy, Mathematics, Statistics, Sciences, Computing, Engineering, Economics and Finance.
+                  </li>
+                  <li>
+                    Students from less quantitatively oriented degrees, such as Business, Management and Politics, are also welcome if they have focused on more quantitative elements of those degrees.
+                  </li>
+                </ul>
+              </div>
+          <div class="card-container" id="product">
+            <div class="card" id="high-gpa" style="display: none;">
+              <div class="card-header">
+                <h3>Queens Mary University, Deep minds scholarship</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card" id="low-gpa" style="display: none;">
+              <div class="card-header">
+                <h3>Queens Mary Uni, champion scholarship</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card" id="avg-gpa" style="display: none;">
+              <div class="card-header">
+                <h3>Queens Mary Uni, Knight scholar </h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+
+     
+    <script>
+      var gpa = {{ queenmary_data }};
+      var sports ={{ queenmary_data1 }};
+      var gender = {{ queenmary_data2 }};
+      if (gpa >= 8 && gender=="Female" ) {
+        document.getElementById("high-gpa").style.display = "block";
+      } elif (gpa >= 7 && sports=="Yes") {
+        document.getElementById("low-gpa").style.display = "block";
+      }
+      elif (gpa >= 8.5) {
+        document.getElementById("avg-gpa").style.display = "block";
+      }
+      else
+      {
+        document.getElementById("None").style.display = "block";
+      }
+    </script>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="{% static 'alluni.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>bits university</title>
+        <!-- Basic page styling -->
+        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
+        <!-- User styling -->
+        <link rel="stylesheet" type="text/css" href="{% static alluni.css %}">
+    </head>
+    <style>
+        .eligibility-criteria {
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 16px;
+          margin: 16px;
+          text-align: left;
+        }
+  
+        .criteria-header {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      </style>
+    <body>
+        
+
+    	<div class="hero" id="top">
+    		<div class="hero-image"></div>
+			<h1>BITS University</h1>
+    	</div>
+    	<div class="navbar-wrapper">
+	        <nav>
+	        	<div class="content">
+		        	<ul>
+		        		<li><a href="#vision"><p>About</p></a></li>
+                        <li><a href="#team"><p>Criteria</p></a></li>
+		        		<li><a href="#product"><p>Scholarships</p></a></li>
+		        		
+		        	</ul>
+		        	<ul class="right">
+		        		<li><a href="#"><p>Predict</p></a></li>
+                <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
+                        <li><a href="#"><p>Home</p></a></li>
+		        	</ul>
+		        </div>
+	        </nav>
+    	</div>
+		<section id="vision">
+			<div class="content">
+			
+				<h2>For a world where student come first</h2>
+                <p>Birla Institute of Technology and Science (BITS) Pilani is a leading technical institute in India, offering a range of undergraduate, postgraduate, and PhD programs in the field of Engineering, Science, and Technology. The Computer Science program at BITS Pilani is one of the most sought-after programs, providing students with a strong foundation in computer science and related fields.</p> 
+                <p>The program focuses on the development of computational thinking and problem-solving skills, along with practical training in software design, development, and testing. Students have the opportunity to work on real-world projects, gain hands-on experience, and collaborate with industry professionals.</p>
+                <p>Overall, the Computer Science program at BITS Pilani provides students with a well-rounded education, preparing them for successful careers in a rapidly changing technological landscape.</p>  
+            </div>
+	    </section>
+        
+		<section class="container my-5" id="team" style="margin-left:280px">
+            <div class="eligibility-criteria">
+                <p class="criteria-header">ELIGIBILITY CRITERIA</p>
+                <p>(i)<br>
+                  For admission to any of the First Degree programmes of BITS except B.Pharm.:  Candidates should have passed the 12th examination of 10+2 system from a recognized Central or State board or its equivalent with Physics, Chemistry and Mathematics (PCM) and adequate proficiency in English.
+                </p>
+                <p>(ii)<br>
+                  For admission to B.Pharm.:   Candidates should have passed the 12th examination of 10+2 system from a recognized Central or State board or its equivalent with Physics, Chemistry and Biology (PCB) and adequate proficiency in English. However candidates with PCM may also apply for the Pharmacy program.
+                </p>
+                <p class="criteria-header">Admission to all the programmes is subject to the conditions given below:</p>
+                <p>
+                  The candidate should have obtained a minimum of aggregate 75% marks in Physics, Chemistry and Mathematics subjects (if he/she has taken Mathematics in BITSAT) or a minimum of aggregate 75% marks in Physics, Chemistry and Biology subjects (if he/she has taken Biology in BITSAT) subjects in 12th examination, with at least 60% marks in each of the Physics, Chemistry, and Mathematics / Biology subjects.
+                </p>
+                <p>
+                  Only Students who are appearing for 12th class examination in 2023 or who have passed 12th class Examination in 2022 are eligible to appear in the BITSAT-2023 test. If a candidate has taken more than one attempt in 12th class or its equivalent, only his/her latest performance is considered, provided this attempt has been for the full component of subjects/courses prescribed. Students who have passed 12th examination in 2021 or earlier are NOT eligible to appear in BITSAT-2023. Students who are presently studying in BITS at any of its campuses are not eligible to appear in BITSAT-2023.
+                </p>
+                <p>
+                  Admissions will be made purely on merit. The merit position of the candidate for admission will be based on the score obtained by the candidate in the BITSAT-2023. For a candidate who has appeared twice in BITSAT 2023, and then seeks admission to any of the First Degree programmes in BITS Pilani, the higher of the two scores will be considered for admission. However, their eligibility for admission is subject to fulfilling the requirement of minimum marks in 12th examination, as mentioned above.
+                </p>
+              </div>
+          </section>
+          <div class="card-container" id="product">
+            <div class="card" id="high-gpa" style="display: none;>
+              <div class="card-header">
+                <h3>BITS Pilani, Merit based scholarship</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header" id="low-gpa" style="display: none;>
+                <h3>BITS Pilani, Bits scholar program</h3>
+              </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
+              </div>
+              <div class="card-footer">
+                <button class="view-more-btn">View More</button>
+              </div>
+            </div>
+          
+          
+          </div>
+          
+          
+          
+		<footer>
+			<p><a href="#">built with ❤ in HACKATHON </a></p>
+		</footer>
+    <script>
+      var gpa = {{ bits_data }};
+      var gender ={{ bits_data1 }};
+      if (gpa >= 7 ) {
+        document.getElementById("high-gpa").style.display = "block";
+      } elif (gender=="Male" && gpa >= 7) {
+        document.getElementById("low-gpa").style.display = "block";
+      }
+      else
+      {
+        document.getElementById("None").style.display = "block";
+      }
+    </script>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- User scripts -->
+		<script type="text/javascript" src="{% static alluni.js %}"></script>
+    </body>
+</html>
