@@ -16,7 +16,24 @@ from studentportal.settings import *
 from django.contrib.auth.decorators import login_required
 from sprofile.models import Sprofile
 
-
+def griffin_s(request):
+    return render(request,"Griffiths.html")
+def amity_s(request):
+    return render(request,"amity.html")
+def bits_s(request):
+    return render(request,"BITSs.html")
+def iis_s(request):
+    return render(request,"IISBangs.html")
+def parul_s(request):
+    return render(request,"parulss.html")
+def queen_s(request):
+    return render(request,"Queenss.html")
+def uuic_s(request):
+    return render(request,"UIUCs.html")
+def bits_s(request):
+    return render(request,"BITSs.html")
+def ottawa_s(request):
+    return render(request,"Universityofottawas.html")
 
 def parul(request):
     data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa

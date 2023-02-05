@@ -29,6 +29,15 @@ urlpatterns = [
      path('UIUCuni', views.UIUCuni, name='UIUCuni'),
      path('Queenmary', views.Queenmary, name='Queenmary'),
      path('Griffithuni', views.Griffithuni, name='Griffithuni'),
+     path('griffin_s', views.griffin_s,name='griffin_s'),
+     path('amity_s', views.amity_s, name='amity_s'),
+     path('bits_s', views.bits_s, name='bits_s'),
+     path('iis_s', views.iis_s, name='iis_s'),
+     path('parul_s',views.parul_s,name='parul_s'),
+     path('queen_s', views.queen_s, name='queen_s'),
+    path('uuic_s',views.uuic_s,name='uuic_s'),
+    path('bits_s',views.bits_s,name='bits_s'),
+    path('ottawa_s',views.ottawa_s,name='ottawa_s'),
   
      
 ]
