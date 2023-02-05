@@ -136,7 +136,7 @@ def generate_essay(request):
         },
     )
 
-    essay = response.json()["choices"][0]["text"]
+    essay = response.json()
     return render(request, "application.html", {"essay": essay})
 
 
