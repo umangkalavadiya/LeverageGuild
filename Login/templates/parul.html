@@ -98,7 +98,7 @@
           </section>
           <div class="card-container" id="product">
           
-            <div class="card high-gpa" id="high-gpa" style="display: none;">
+            <div class="card high-gpa" id="high-gpa" >
               <div class="card-header">
                 <h3>Fee Help Scholarship</h3>
               </div>
@@ -106,19 +106,20 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
-                <button class="view-more-btn">View More</button>
+                <a href ="{% url 'Login:parul_s' %}">
+                <button class="view-more-btn">View More</button></a>
               </div>
             </div>
           
-            <div class="card low-gpa" id="low-gpa" style="display: none;">
+            <div class="card low-gpa" id="low-gpa">
               <div class="card-header">
                 <h3>Sports Scholarship</h3>
               </div>
               <div class="card-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
-              <div class="card-footer">
-                <button class="view-more-btn">View More</button>
+              <a href ="{% url 'Login:parul_s' %}">
+                <button class="view-more-btn">View More</button></a>
               </div>
             </div>
         
@@ -138,7 +139,7 @@
       var sports ={{ data1 }};
       if (gpa >= 7 ) {
         document.getElementById("high-gpa").style.display = "block";
-      } elif (data1=="Yes") {
+      } elif (sports=="Yes") {
         document.getElementById("low-gpa").style.display = "block";
       }
       else

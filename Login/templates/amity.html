@@ -64,7 +64,7 @@
               </div>
           </section>
           <div class="card-container" id="product">
-            <div class="card" id="high-gpa" style="display: none;">
+            <div class="card" id="high-gpa" >
               <div class="card-header">
                 <h3>Amity University Academic scholarship</h3>
               </div>
@@ -72,11 +72,12 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
-                <button class="view-more-btn">View More</button>
+                <a href ="{% url 'Login:amity_s' %}">
+                  <button class="view-more-btn">View More</button></a>
               </div>
             </div>
           
-            <div class="card" id="low-gpa" style="display: none;">
+            <div class="card" id="low-gpa" >
               <div class="card-header">
                 <h3>Amity university sports scholarship</h3>
               </div>
@@ -84,7 +85,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
-                <button class="view-more-btn">View More</button>
+                <a href ="{% url 'Login:amity_s' %}">
+                  <button class="view-more-btn">View More</button></a>
               </div>
             </div>
           

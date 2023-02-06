@@ -19,13 +19,13 @@ from sprofile.models import Sprofile
 def griffin_s(request):
     return render(request,"Griffiths.html")
 def amity_s(request):
-    return render(request,"amity.html")
+    return render(request,"Amitys.html")
 def bits_s(request):
     return render(request,"BITSs.html")
 def iis_s(request):
     return render(request,"IISBangs.html")
 def parul_s(request):
-    return render(request,"parulss.html")
+    return render(request,"paruls.html")
 def queen_s(request):
     return render(request,"Queenss.html")
 def uuic_s(request):
@@ -135,9 +135,9 @@ from django.shortcuts import render
 import requests
 
 def generate_essay(request):
-    api_key = "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"
+    api_key = "write your api key here"
     model = "text-davinci-002"
-    prompt = "write me an application letter for parul university"
+    prompt = "write me an application letter for parul university in 1000 words"
 
     response = requests.post(
         "https://api.openai.com/v1/completions",
