@@ -98,7 +98,7 @@
           </section>
           <div class="card-container" id="product">
           
-            <div class="card high-gpa" id="high-gpa" >
+            <div class="card high-gpa" id="high-gpa" style="display: none;" >
               <div class="card-header">
                 <h3>Fee Help Scholarship</h3>
               </div>
@@ -111,7 +111,7 @@
               </div>
             </div>
           
-            <div class="card low-gpa" id="low-gpa">
+            <div class="card low-gpa" id="low-gpa" style:"display:none;">
               <div class="card-header">
                 <h3>Sports Scholarship</h3>
               </div>
@@ -134,22 +134,22 @@
 			<p><a href="#">built with ❤ in HACKATHON </a></p>
 		</footer>
     
-    <script>
+   <script>
       var gpa = {{ data }};
       var sports ={{ data1 }};
-      if (gpa >= 7 ) {
+      if (gpa <= 7 ) {
         document.getElementById("high-gpa").style.display = "block";
-      } elif (sports=="Yes") {
-        document.getElementById("low-gpa").style.display = "block";
-      }
+        }
+      
       else
       {
         document.getElementById("None").style.display = "block";
       }
-    </script>
+    </script> 
+    <script src="{% static 'alluni.js' %}"></script> 
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<!-- User scripts -->
-		<script type="text/javascript" src="{% static alluni.js %}"></script>
+		
     </body>
 </html>

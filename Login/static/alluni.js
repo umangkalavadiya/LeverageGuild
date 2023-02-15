@@ -1,3 +1,4 @@
+
 $(function() {
 
 	$(window).scroll(function() {
@@ -51,15 +52,5 @@ $(function() {
 
 });
 
+  
 
-var data = {{ data|safe }};
-for (var i = 0; i < data.length; i++) {
-  if (data[i].current_gpa <= 7.0) {
-	document.getElementById("high-gpa").style.display = "block";
-	document.getElementById("low-gpa").style.display = "none";
-	break;
-  } else {
-	document.getElementById("high-gpa").style.display = "none";
-	document.getElementById("low-gpa").style.display = "block";
-  }
-}
