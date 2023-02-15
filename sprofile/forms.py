@@ -7,7 +7,7 @@ from sprofile.models import Sprofile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Sprofile
-        fields = ['first_name','last_name', 'email','date_of_birth','gender','address','phone','current_degree','current_gpa','gre_score','ilets_score','research_experience','lor','family_income','sports','speak_french','work_experience','internships']
+        fields = ['first_name','last_name','date_of_birth','gender','address','phone','current_degree','current_gpa','gre_score','gate_score','ilets_score','research_experience','lor','family_income','sports','speak_french','work_experience','internships']
   
 
 def form_validation_error(form):

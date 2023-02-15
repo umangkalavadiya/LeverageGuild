@@ -22,7 +22,7 @@
         }
       </style>
     <body>
-       <h1>{{ bits_data1 }}</h1> 
+       {% comment %} <h1>{{ bits_data1 }}</h1>  {% endcomment %}
 
     	<div class="hero" id="top">
     		<div class="hero-image"></div>
@@ -38,7 +38,7 @@
 		        		
 		        	</ul>
 		        	<ul class="right">
-		        		<li><a href="#"><p>Predict</p></a></li>
+		        		<li><a href="{% url 'sprofile:bits' %}"><p>Predict</p></a></li>
                 <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
                         <li><a href="#"><p>Home</p></a></li>
 		        	</ul>

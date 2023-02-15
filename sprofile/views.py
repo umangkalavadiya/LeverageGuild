@@ -47,7 +47,7 @@ def edit_profile(request):
             form = ProfileForm(request.POST, instance=profile)
             if form.is_valid():
                 form.save()
-                return redirect('/edit_profile')
+                return redirect('Login:Index')
         else:
             form = ProfileForm(instance=profile)
         return render(request, 'edit_profile.html', {'form': form})
@@ -56,24 +56,211 @@ def edit_profile(request):
     
 import pickle
 
-def predicted(request): 
+def au(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        gate_score = int(Sprofile.objects.get(user=request.user).gate_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/AU.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,gate_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login') 
+    
+    
+def bits(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        gate_score = int(Sprofile.objects.get(user=request.user).gate_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/BITS.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, gate_score, lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')   
+
+
+def gu(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/GU.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')  
+    
+    
+def iis(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        gate_score = int(Sprofile.objects.get(user=request.user).gate_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/IIS.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,gate_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')      
+
+def pu(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        gate_score = int(Sprofile.objects.get(user=request.user).gate_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/PU.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, gate_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')  
+
+def qmu(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/QMU.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')  
+
+def su(request): 
     if request.user.is_authenticated:
         cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
         ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
         gre_score = int(Sprofile.objects.get(user=request.user).gre_score)
         lor = int(Sprofile.objects.get(user=request.user).lor)
-        research_experience_yes = 1
-        research_experience_no = 0
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
         course = 1
+        university = 1
         
         # Load the saved model
-        # loaded_model = pickle.load(open("sprofile/uni_rec_model.pickle", "rb"))
-        loaded_model = load("sprofile/uni_rec_model.joblib")
+        loaded_model = load(open("sprofile/SU.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
         
         # Use the model to make a prediction
-        result = loaded_model.predict([[cgpa, gre_score, ilets_score, research_experience_yes,research_experience_no, course, lor]])
+        result = loaded_model.predict([[cgpa, ilets_score,gre_score,lor, research_experience, work_experience, course, university]])
     
         # Render the result on the HTML template
-        return render(request, "predict.html", {"result": result})
+        return render(request, "predict.html", {"result": result}) 
     else:
         return redirect('Login:Login')  
+
+def uoo(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        gre_score = int(Sprofile.objects.get(user=request.user).gre_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/UOO.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,gre_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')  
+
+
+def uiuc(request): 
+    if request.user.is_authenticated:
+        cgpa = float(Sprofile.objects.get(user=request.user).current_gpa)
+        ilets_score = int(Sprofile.objects.get(user=request.user).ilets_score)
+        gre_score = int(Sprofile.objects.get(user=request.user).gre_score)
+        lor = int(Sprofile.objects.get(user=request.user).lor)
+        research_experience = int(Sprofile.objects.get(user=request.user).research_experience)
+        work_experience = int(Sprofile.objects.get(user=request.user).work_experience)
+        course = 1
+        university = 1
+        
+        # Load the saved model
+        loaded_model = load(open("sprofile/UIUC.pickle", "rb"))
+        # loaded_model = load("sprofile/uni_rec_model.joblib")
+        
+        # Use the model to make a prediction
+        result = loaded_model.predict([[cgpa, ilets_score,gre_score,lor, research_experience, work_experience, course, university]])
+    
+        # Render the result on the HTML template
+        return render(request, "predict.html", {"result": result}) 
+    else:
+        return redirect('Login:Login')  
+
+
