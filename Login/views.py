@@ -30,10 +30,11 @@ def queen_s(request):
     return render(request,"Queenss.html")
 def uuic_s(request):
     return render(request,"UIUCs.html")
-def bits_s(request):
-    return render(request,"BITSs.html")
+def auckland_s(request):
+    return render(request,"UofAuckland_s.html")
 def ottawa_s(request):
     return render(request,"Universityofottawas.html")
+
 
 def parul(request):
     data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
@@ -47,8 +48,14 @@ def parul(request):
     return render(request, 'parul.html',context)
 
 def iis(request):
-    
-    return render(request, 'iis.html')
+     
+     iis_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+     context = {
+        'iis_data': iis_data,
+        
+        
+    }
+     return render(request, 'iis.html',context)
 def amity(request):
     amity_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
     amity_data1 = Sprofile.objects.all().filter(user=request.user)[0].sports
@@ -61,12 +68,12 @@ def amity(request):
     return render(request, 'amity.html',context)
 
 def bits(request):
-    amity_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
-    amity_data1 = Sprofile.objects.all().filter(user=request.user)[0].gender
+    bits_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
+    bits_data1 = Sprofile.objects.all().filter(user=request.user)[0].gender
     
     context = {
-        'amity_data': amity_data,
-        'amity_data1': amity_data1,
+        'bits_data': bits_data,
+        'bits_data1': bits_data1,
         
     }
     return render(request, 'bits.html',context)
@@ -74,7 +81,7 @@ def bits(request):
 def Ottawauni(request):
     ottawauni_data = Sprofile.objects.all().filter(user=request.user)[0].current_gpa
     ottawauni_data1 = Sprofile.objects.all().filter(user=request.user)[0].gender
-    ottawauni_data2 = Sprofile.objects.all().filter(user=request.user)[0].sports
+    ottawauni_data2 = Sprofile.objects.all().filter(user=request.user)[0].speak_french
 
     
     context = {

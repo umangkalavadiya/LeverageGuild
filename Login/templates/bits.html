@@ -22,7 +22,7 @@
         }
       </style>
     <body>
-        
+       <h1>{{ bits_data1 }}</h1> 
 
     	<div class="hero" id="top">
     		<div class="hero-image"></div>
@@ -77,7 +77,8 @@
               </div>
           </section>
           <div class="card-container" id="product">
-            <div class="card" id="high-gpa" style="display: none;>
+
+            <div class="card" id="high-gpa" style="display: none;">
               <div class="card-header">
                 <h3>BITS Pilani, Merit based scholarship</h3>
               </div>
@@ -85,19 +86,26 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                <a href ="{% url 'Login:bits_s' %}">
+                
                 <button class="view-more-btn">View More</button>
+              </a>
+           
               </div>
             </div>
           
-            <div class="card">
-              <div class="card-header" id="low-gpa" style="display: none;>
+            
+              <div class="card" id="low-gpa" style="display: none;">
+                <div class="card-header">
                 <h3>BITS Pilani, Bits scholar program</h3>
               </div>
               <div class="card-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                <a href ="{% url 'Login:bits_s' %}">
                 <button class="view-more-btn">View More</button>
+              </a>
               </div>
             </div>
           
@@ -105,21 +113,24 @@
           </div>
           
           
-          
+          <p id="demo"></p>
 		<footer>
 			<p><a href="#">built with ❤ in HACKATHON </a></p>
 		</footer>
     <script>
-      var gpa = {{ bits_data }};
-      var gender ={{ bits_data1 }};
-      if (gpa >= 7 ) {
+      var gpa = "{{ bits_data }}";
+      var gender ="{{ bits_data1 }}";
+      if (gpa >= 7  && gender!="Male") {
         document.getElementById("high-gpa").style.display = "block";
-      } elif (gender=="Male" && gpa >= 7) {
+      } else if (gender=="Male" || gender=="male" && gpa >= 7) {
+        document.getElementById("low-gpa").style.display = "block";
+        document.getElementById("high-gpa").style.display = "block";
+      }
+      else if (gender=="Male" && gpa <7) {
         document.getElementById("low-gpa").style.display = "block";
       }
-      else
-      {
-        document.getElementById("None").style.display = "block";
+      else{
+        document.getElementById("demo").innerHTML = "Sorry, you are not eligible for any scholarship";
       }
     </script>
 		<!-- jQuery -->

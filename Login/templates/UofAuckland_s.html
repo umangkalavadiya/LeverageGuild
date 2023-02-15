@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'alluni.css' %}">
+  <title>University of Auckland</title>
+  <style>
+    body{
+        background-color: darkgrey;
+    }
+    .container {
+        background-color: #f7f7f7;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+      }
+      h1 {
+        color: #337ab7;
+      }
+      .border {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px #ccc; 
+        animation: slideInLeft 1s ease;
+      }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center">University of Auckland Oceania Scholarship. </h1>
+    <hr>
+    <div class="border p-3">
+      <h2>Key Information:</h2>
+      <p>The Oceania scholarship provides high achieving students with geneours help to get through their academics. </p>
+    </div>
+    <div class="border p-3 my-3">
+      <h2> Oceania scholarship Eligibility Criteria:</h2>
+      <ul>
+        <li> Be an international student from anywhere but Australia. </li>
+        <li> Have minimum GPA of 80 percent. </li> 
+        <li> Have applied to study at U of Auckland by scholarship end date. </li>
+        <li> Satisfy English language entry requirement. </li>
+      </ul>
+    </div>
+    <div class="border p-3 my-3">
+      <h2>Oceania Scholarship Rewards and Benefits:</h2>
+      <ul>
+        <li>Discounts 50% of the tuition fees of entire course </li>
+        <li> Provides one time air fare to students. </li>
+      </ul>
+    </div>
+    <div class="border p-3 my-3">
+      <h2>Oceania Scholarship Application Process:</h2>
+      <ol>
+        <li>Selected students should apply through university portal. </li>
+        <li>Write a 250 words personal statement. </li>
+        
+      </ol>
+    </div>
+    </div>
+     
+    <script type="text/javascript" src="{% static 'alluni.js' %}"></script>
+  </body>
+  </html>
+  

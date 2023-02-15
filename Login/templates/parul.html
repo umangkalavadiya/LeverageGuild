@@ -10,7 +10,7 @@
     </head>
     <body>
         
-      
+    
     	<div class="hero" id="top">
     		<div class="hero-image"></div>
 			<h1>Parul University</h1>
@@ -98,7 +98,7 @@
           </section>
           <div class="card-container" id="product">
           
-            <div class="card high-gpa" id="high-gpa" style="display: none;" >
+            <div class="card" id="high-gpa" style="display: none;" >
               <div class="card-header">
                 <h3>Fee Help Scholarship</h3>
               </div>
@@ -111,13 +111,14 @@
               </div>
             </div>
           
-            <div class="card low-gpa" id="low-gpa" style:"display:none;">
+            <div class="card low-gpa" id="low-gpa" style="display:none;">
               <div class="card-header">
                 <h3>Sports Scholarship</h3>
               </div>
               <div class="card-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
+              <div class="card-footer">
               <a href ="{% url 'Login:parul_s' %}">
                 <button class="view-more-btn">View More</button></a>
               </div>
@@ -125,9 +126,7 @@
         
             
           </div>
-      
-          
-         
+      <p id="demo"></p>
           
 
 		<footer>
@@ -135,15 +134,22 @@
 		</footer>
     
    <script>
-      var gpa = {{ data }};
-      var sports ={{ data1 }};
-      if (gpa <= 7 ) {
+    
+      var gpa = "{{ data }}";
+      var sports ="{{ data1 }}";
+      
+      if (gpa >= 7 && sports == "False") {
         document.getElementById("high-gpa").style.display = "block";
         }
-      
-      else
-      {
-        document.getElementById("None").style.display = "block";
+        else if (sports == "True" && gpa <7  ) {
+        document.getElementById("low-gpa").style.display = "block";
+        }
+        else if (sports == "True" && gpa >=7  ) {
+        document.getElementById("low-gpa").style.display = "block";
+        document.getElementById("high-gpa").style.display = "block";
+        }
+      else{
+        document.getElementById("demo").innerHTML = "Sorry, you are not eligible for any scholarship";
       }
     </script> 
     <script src="{% static 'alluni.js' %}"></script> 

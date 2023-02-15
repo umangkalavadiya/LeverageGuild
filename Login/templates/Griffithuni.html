@@ -1,4 +1,4 @@
-{%load static %}
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -82,7 +82,8 @@
 		<li><strong>Pearson Test of English (Academic):</strong> An overall score of 58 with no score less than 50</li>
 	</ul>
           <div class="card-container" id="product">
-            <div class="card" id="high-gpa" style="display: none;>
+
+            <div class="card" id="high-gpa" style="display: none;">
               <div class="card-header">
                 <h3>Griffith remarkable</h3>
               </div>
@@ -90,11 +91,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+				<a href ="{% url 'Login:griffin_s' %}">
                 <button class="view-more-btn">View More</button>
+				</a>
               </div>
             </div>
           
-            <div class="card" id="low-gpa" style="display: none;>
+            <div class="card" id="low-gpa" style="display: none;">
               <div class="card-header">
                 <h3>Griffith's deans list</h3>
               </div>
@@ -102,11 +105,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+				<a href ="{% url 'Login:griffin_s' %}">
                 <button class="view-more-btn">View More</button>
+			</a>
               </div>
             </div>
           
-            <div class="card" id="avg-gpa" style="display: none;>
+            <div class="card" id="avg-gpa" style="display: none;">
               <div class="card-header">
                 <h3>Griffith's international schoalr</h3>
               </div>
@@ -114,32 +119,38 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+				<a href ="{% url 'Login:griffin_s' %}">
                 <button class="view-more-btn">View More</button>
+			</a>
               </div>
             </div>
+
           </div>
           
-          
+          <p id="demo"></p>
           
 		<footer>
 			<p><a href="#">built with ❤ in HACKATHON </a></p>
 		</footer>
 		 
 		<script>
-			var gpa = {{ griffith_data }};
-			var sports ={{ griffith_data1 }};
-			if (gpa >= 8 ) {
-			  document.getElementById("high-gpa").style.display = "block";
-			} elif (gpa >= 8 && sports == "	Yes") {
-			  document.getElementById("low-gpa").style.display = "block";
-			}
-			elif (gpa==75)
-			{
-			  document.getElementById("avg-gpa").style.display = "block";
-			}
-			else{
-							  document.getElementById("None").style.display = "block";
-			}
+			var gpa = "{{ griffith_data }}";
+			var sports ="{{ griffith_data1 }}";
+			if (gpa >= 8 && sports == "True") {
+        document.getElementById("high-gpa").style.display = "block";
+        document.getElementById("low-gpa").style.display = "block";
+		document.getElementById("avg-gpa").style.display = "block";
+        }
+        else if (sports != "True" && gpa >8  ) {
+        document.getElementById("high-gpa").style.display = "block";
+		document.getElementById("avg-gpa").style.display = "block";
+        }
+        else if (sports != "True" && gpa >=7.5  ) {
+        document.getElementById("avg-gpa").style.display = "block";
+        }
+      else{
+        document.getElementById("demo").innerHTML = "Sorry, you are not eligible for any scholarship";
+      }
 		  </script>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

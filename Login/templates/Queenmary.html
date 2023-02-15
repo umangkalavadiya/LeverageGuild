@@ -1,4 +1,4 @@
-{% load static % }
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -114,7 +114,9 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                 <a href ="{% url 'Login:queen_s' %}">
                 <button class="view-more-btn">View More</button>
+                </a>
               </div>
             </div>
           
@@ -126,7 +128,9 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                 <a href ="{% url 'Login:queen_s' %}">
                 <button class="view-more-btn">View More</button>
+                </a>
               </div>
             </div>
           
@@ -138,33 +142,47 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                 <a href ="{% url 'Login:queen_s' %}">
                 <button class="view-more-btn">View More</button>
+                </a>
               </div>
             </div>
           </div>
           
           
-          
+       <p id="demo"></p>   
 		<footer>
 			<p><a href="#">built with ❤ in HACKATHON </a></p>
 		</footer>
 
      
     <script>
-      var gpa = {{ queenmary_data }};
-      var sports ={{ queenmary_data1 }};
-      var gender = {{ queenmary_data2 }};
-      if (gpa >= 8 && gender=="Female" ) {
+      var gpa = "{{ queenmary_data }}";
+      var sports ="{{ queenmary_data1 }}";
+      var gender = "{{ queenmary_data2 }}";
+      if (gpa >= 8 && gender=="Female" || gender=="female" && sports=="True") {
         document.getElementById("high-gpa").style.display = "block";
-      } elif (gpa >= 7 && sports=="Yes") {
         document.getElementById("low-gpa").style.display = "block";
-      }
-      elif (gpa >= 8.5) {
         document.getElementById("avg-gpa").style.display = "block";
       }
-      else
-      {
-        document.getElementById("None").style.display = "block";
+      else  if (gpa >= 8 && gender=="Female" || gender=="female" && sports!="True") {
+        document.getElementById("high-gpa").style.display = "block";
+        
+      }
+      else  if (gpa >= 8.5 && gender=="Female" || gender=="female" && sports=="True") {
+        
+        document.getElementById("low-gpa").style.display = "block";
+        document.getElementById("avg-gpa").style.display = "block";
+        
+      } else if (gpa >= 7.5 && sports=="True") {
+        document.getElementById("low-gpa").style.display = "block";
+        document.getElementById("avg-gpa").style.display = "block";
+      }
+      else if (gpa >= 8.5  && sports!="True") {
+        document.getElementById("avg-gpa").style.display = "block";
+      }
+      else{
+        document.getElementById("demo").innerHTML = "Sorry, you are not eligible for any scholarship";
       }
     </script>
 		<!-- jQuery -->

@@ -1,11 +1,9 @@
-{% load static % }
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <title>University of Illinois at Urbana-Champaign</title>
         <!-- Basic page styling -->
-        <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
-        <!-- User styling -->
         <link rel="stylesheet" type="text/css" href="{% static 'alluni.css' %}">
     </head>
     <style>
@@ -100,7 +98,7 @@
       </ul>
           </section>
           <div class="card-container" id="product">
-            <div class="card" style="display: none;">
+            <div class="card" id="high-gpa" style="display: none;">
               <div class="card-header">
                 <h3>UIUC, Champaign Scholar program</h3>
               </div>
@@ -108,11 +106,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                <a href ="{% url 'Login:uuic_s' %}">
                 <button class="view-more-btn">View More</button>
+                </a>
               </div>
             </div>
           
-            <div class="card" style="display: none;">
+            <div class="card"  id="low-gpa"style="display: none;">
               <div class="card-header">
                 <h3>UIUC, Oosegood Scholar</h3>
               </div>
@@ -120,29 +120,35 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam et tincidunt tempus, sem justo placerat elit, a dictum libero libero quis purus.</p>
               </div>
               <div class="card-footer">
+                <a href ="{% url 'Login:uuic_s' %}">
                 <button class="view-more-btn">View More</button>
+                </a>
               </div>
             </div>
           
           </div>
           
-          
+     <p id="demo"></p>     
           
 		<footer>
 			<p><a href="#">built with ❤ in HACKATHON </a></p>
 		</footer>
      
     <script>
-      var gpa = {{ uiu_data }};
-      var sports ={{ uiu_data1 }};
-      if (gpa >= 8 && sports=="Yes") { ) {
+      var gpa = "{{ uiu_data }}";
+      var sports ="{{ uiu_data1 }}";
+      if (gpa >= 8.5 && sports == "True") {
         document.getElementById("high-gpa").style.display = "block";
-      } elif (gpa>=9) {
         document.getElementById("low-gpa").style.display = "block";
-      }
-      else
-      {
-        document.getElementById("None").style.display = "block";
+        }
+        else if (sports == "True" && gpa >8  ) {
+        document.getElementById("high-gpa").style.display = "block";
+        }
+        else if (sports != "True" && gpa >=8.5  ) {
+        document.getElementById("high-gpa").style.display = "block";
+        }
+      else{
+        document.getElementById("demo").innerHTML = "Sorry, you are not eligible for any scholarship";
       }
     </script>
 		<!-- jQuery -->
