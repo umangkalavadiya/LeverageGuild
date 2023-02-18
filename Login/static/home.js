@@ -27,3 +27,15 @@ sunIcon.addEventListener('click', function() {
     container.classList.add('light-mode');
   }
 });
+
+$('.carousel').carousel({
+  interval: 5000,
+  pause: 'hover',
+  wrap: true
+});
+
+$('.carousel-control-prev, .carousel-control-next').on('mouseenter', function() {
+  $(this).find('.carousel-control-prev-icon, .carousel-control-next-icon').addClass('animated bounce');
+}).on('mouseleave', function() {
+  $(this).find('.carousel-control-prev-icon, .carousel-control-next-icon').removeClass('animated bounce');
+});

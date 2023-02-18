@@ -1,26 +1,149 @@
 body{
   font-family: 'Times New Roman', Times, serif;
+  
 }
+
+
+
+/* navbar */
+.navbar-light, .navbar-nav:hover {
+  color: whitesmoke;  
+}
+
+.nav-link:hover{
+ 
+  background-color:rgb(88, 119, 119);
+
+}
+
+
+.dropdown-menu, .dropdown-item:hover {
+  color: #fff;
+  
+}
+
+.dropdown-menu ,.dropdown-item:focus {
+  color: #fff;
+  
+}
+
+.sun-icon{
+  color:white;
+}
+
+/* navbar */
+
+
+
+.carousel-item {
+  height: 590px;
+}
+
+.carousel-caption {
+  top: 130px;
+  
+
+}
+
+.carousel-caption h3 {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  z-index: 5;
+}
+
+.carousel-indicators li {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: rgba(255,255,255,1);
+}
+
 
 .images{
   height: 650px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.8;
 }
 
+
+
 .animated-button {
-  border-radius: 12px;
+  
   transition: all 0.3s ease-in-out;
 }
 
 .animated-button:hover {
-  box-shadow: 0 0 10px rgb(17, 0, 255);
-}
-.icon-box:hover{
-  box-shadow: 0 0 10px rgb(17, 0, 255);
+  box-shadow: 0 0 10px rgb(88, 119, 119);
 }
 
+.icon-box {
+  background-color:whitesmoke;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-box:hover{
+  transform: translateY(-5px);
+  background-color: rgb(88, 119, 119) ;
+
+  
+
+}
+
+.whitek{
+  color: black ;
+}
+.whitek:hover{
+  color: #fff ;
+}
+
+.icon-box i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color:black;
+}
+.fast{
+  color: #007bff;
+}
+
+.icon-box h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.icon-box p {
+  font-size: 1.2rem;
+  color: black;
+}
+
+.row {
+  display: flex;
+}
 
 .sun-icon {
   font-size: 20px;
@@ -36,28 +159,8 @@ body{
   color: white;
 }
 
-.icon-box {
-  text-align: center;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
 
-.icon-box i {
-  font-size: 50px;
-  margin-bottom: 10px;
-  color: #333;
-}
 
-.icon-box h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.icon-box p {
-  font-size: 16px;
-}
 
 .text{
   font-size: 24px;
@@ -103,10 +206,11 @@ margin-left: 80%;
 }
 
 
+ 
 
 
 #mission .card:hover {
-  background-color: #333;
+  background-color: rgb(88, 119, 119);
   color: #fff;
   cursor: pointer;
 }
@@ -117,12 +221,16 @@ margin-left: 80%;
 }
 
 #mission .card:hover h3, #mission .card:hover p {
-  color: #fff;
+  color: #000;
 }
 .foot{
-  margin-left:-8px;
-  margin-right: -8px;
+  
+
   margin-bottom: -110px;
 
+}
+
+.viewmore:hover{
+  background-color: rgb(88, 119, 119);
 }
 

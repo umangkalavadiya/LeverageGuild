@@ -14,102 +14,114 @@
   </head>
   <body>
     <!-- navigationbar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark light-mode ">
-        <a class="navbar-brand" href="#">LeverageGuild</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="{% url 'Login:home' %}">Home</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'Login:scholarship' %}">Scholarship</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'Login:university' %}">University</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'Login:about' %}">About</a>
-              </li>
-              {% if user.is_authenticated %}
-              <div class="dropdown">
-                <a href="#"  class="nav-item nav-link" id="user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{user.username}} <i class="fas fa-user"></i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="user-dropdown">
-                  <a class="nav-link btn btn-primary dropdown-item" href="{% url 'sprofile:edit_profile' %}" style="color: black;">View Profile</a>
-                  <a class="nav-link btn btn-primary dropdown-item" href="#" onclick="location.href='/logout';" style="color: black;">Logout</a>
-                </div>
-              </div>
-            {% else %}
-            <li class="nav-item mx-1"></li>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: black">
+      <a class="navbar-brand" href="#" style="color:white;">LeverageGuild</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active " style="color: white;" href="{% url 'Login:home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-primary" href="{% url 'Login:SignUp' %}" style="color: white; background-color: black;">Signup</a>
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:scholarship' %}">Scholarship</a>
           </li>
-              <a class="nav-link btn btn-primary" href="{% url 'Login:Login' %}" style="color: white; background-color: black;">Login</a>
-              {% endif %}
-          </ul>
-        </div>
-        <div class="ml-auto">
-            <i class="fas fa-sun sun-icon ml-2"></i>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:university' %}">University</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:about' %}">About</a>
+          </li>
+          {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a href="#" style="color:white;" class="nav-item nav-link" id="user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{user.username}} <i class="fas fa-user sun-icon"></i>
+              </a>
+
+            <div class="dropdown-menu" aria-labelledby="user-dropdown">
+              <a class="nav-link btn btn-primary dropdown-item" href="{% url 'sprofile:edit_profile' %}" style="color: black;">View Profile</a>
+              <a class="nav-link btn btn-primary dropdown-item" href="#" onclick="location.href='/logout';" style="color: black;">Logout</a>
+            </div>
           </div>
-      </nav>
+          {% else %}
+          <li class="nav-item mx-1"></li>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link btn " href="{% url 'Login:SignUp' %}" style="color: white; background-color:rgb(88, 119, 119); margin-right:4px;">Signup</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link btn " href="{% url 'Login:Login' %}" style="color: white; background-color:rgb(88, 119, 119)">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="ml-auto">
+        <i class="fas fa-sun sun-icon ml-2"></i>
+      </div>
+    </nav>
+    
     <!-- navigationbar -->
 
-    <!-- sliders -->
-    <div class="bd-example  ">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="{% static 'img/firstslide.jpg' %}" class="images d-block" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h3 class="text-right text-light ">Turning Dreams into Stats</h3>
-            </div>
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'img/secondslide.jpg' %}" class=" images d-block" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h3 class="text-right">Answering the question "to be or not to be the student of best university?"</h3>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'img/thirdslide.jpg' %}" class=" images d-block" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h3 class="text-right">Helping students realise that getting education does not require selling your farms </h3>
-            </div>
-            </div>
+   <!-- container for sliders and buttons -->
+<div class="position-relative">
+
+  <!-- sliders -->
+  <div class="bd-example" style="background-color: #f8f9fa;">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'img/pexels-andrea-piacquadio-3807751.jpg' %}" class="images d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="text-right text-light ">Turning Dreams <br> into Stats</h3>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/secondslide.jpg' %}" class=" images d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="text-right">Answering the question <br> "to be or not to be <br> the student <br> of best university?"</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/siora-photography-hgFY1mZY-Y0-unsplash.jpg' %}" class=" images d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="text-right">Helping students realise that <br> getting education <br> does not require <br> selling your farms </h3>
+          </div>
         </div>
       </div>
-    <!-- sliders -->
-
-    <!-- top 3 buttons -->
-    <div class="container mt-3">
-        <div class="d-flex justify-content-between">
-          <button  class="btn-outline-dark animated-button w-100 mr-2 p-3 btn-lg">View Our Mission</button>
-          <button  class="btn-outline-dark animated-button w-100 mr-2 p-3 btn-lg">Top Scholarships</button>
-          <button  class="btn-outline-dark animated-button w-100 btn-lg ">Top University</button>
-        </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <!-- top 3 buttons-->
+  </div>
+
+  <!-- top 3 buttons -->
+  <div class="container position-absolute" style="top: 96%; left: 0; right: 0; transform: translateY(-50%);">
+    <div class="d-flex justify-content-between">
+      <a href="#1"><button class="btn-outline-dark animated-button w-25 mr-2 p-3 btn-lg" style="position: absolute; left: 15%; transform: translateX(-50%); z-index: 1; background-color:black; color:white;">View Our Mission</button>  </a>
+      <a href="#2"><button class="btn-outline-dark animated-button w-25 mr-2 p-3 btn-lg" style="position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; background-color:black; color:white;">Top Scholarships</button></a>
+      <a href="#3"><button class="btn-outline-dark animated-button w-25 mr-2 p-3 btn-lg" style="position: absolute; left: 88%; transform: translateX(-50%); z-index: 1; background-color:black; color:white;">Top Universities</button></a>
+    </div>
+  </div>
+ 
+
+</div>
+
+<br>
+<br>
+
     <!-- brief about website page -->
-    <div class=" mt-3 p-3 bg-light">
+    <div class=" mt-3 p-3 bg-white">
       <div class="d-flex flex-column align-items-center">
           <i class="fa-solid fa-graduation-cap fa-4x mb-3"></i>
         <p class="text-secondary container text ">Our website helps users get all the details of scholarships, university recommendations, and many more services according to their personal details. Our platform is user-friendly and offers a comprehensive database of information that can be easily accessible to anyone in need. Whether you're a student, teacher, or researcher, our website has something to offer you. With our website, you can find information on various scholarships, top-ranked universities, and other resources to help you achieve your academic and career goals. So, <a href="#" class="text-primary font-weight-bold">join us today</a> and start exploring!</p>
@@ -121,41 +133,50 @@
     <!-- stats of website -->
     <div class="container-fluid mt-5">
       <div class="container-fluid mt-5">
-       <div class="row">
-         <div class="col-md-3" >
-           <div class="icon-box btn-outline-secondary ">
-             <i class="fas fa-user-check text-black btn"></i>
-             <h3 class="text-black">Active Users</h3>
-             <p class="text-black">1000</p>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="icon-box btn-outline-secondary">
-             <i class="fas fa-money-bill-alt"></i>
-             <h3>Total Scholarships</h3>
-             <p>500</p>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="icon-box btn-outline-secondary">
-             <i class="fas fa-university"></i>
-             <h3>Total Universities</h3>
-             <p>200</p>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="icon-box btn-outline-secondary">
-             <i class="fas fa-users"></i>
-             <h3>Contributors</h3>
-             <p>100</p>
-           </div>
-         </div>
-       </div>
-     </div>
-    <!-- stats of website -->
+        <div class="row">
+          <div class="col-md-3">
+            <div class="icon-box stats">
+              <i class="fas fa-user-check whitek"></i>
+              <h3 class="textl">Active Users</h3>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="col-md-3" >
+            <div class="icon-box">
+              <i class="fas fa-money-bill-alt whitek"></i>
+              <h3 class="textl">Total Scholarships</h3>
+              <p>500</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="icon-box">
+              <i class="fas fa-university whitek"></i>
+              <h3 class="textl">Total Universities</h3>
+              <p>200</p>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="icon-box">
+              <i class="fas fa-users whitek"></i>
+              <h3 class="textl">Contributors</h3>
+              <p>100</p>
+            </div>
+          </div>
 
+
+
+          
+        </div>
+      </div>
+    </div>
+
+
+      <br>
+
+    <!-- stats of website -->
+    
     <!-- top universities stats --> <br>
-    <section id="mission" class="bg-outline-white ">
+<section id="mission" class="bg-outline-white ">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -164,27 +185,31 @@
           </div>
         </div>
       </div>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center container">
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/firstslide.jpg' %}" class="card-img-top" alt="...">
+        <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
           <h5 class="card-title text-black mb-0">university of illinois at urbana champaign</h5>
         </div>
         <div class="card-body">
-          <p class="card-text mb-4">UIUC - 13th best university to study AI on planet</p>
+          <p class="card-text mb-4">UIUC - 13th best university to study AI on planet</p> <br>
         </div>
       </div>
+
+
+      
+
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/secondslide.jpg' %}" class="card-img-top" alt="...">
+        <img src="https://media.almabaseapp.com/234/alumsite/photo_gallery/18/thumbnails/IMG_20150613_152225.jpg-b5225d3fd9d84134a01b712c4f05061c_small.jpg" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
-          <h5 class="card-title text-black mb-0">IIS Banglore</h5>
+          <h5 class="card-title text-black mb-0">IISC Banglore</h5>
         </div>
         <div class="card-body">
-          <p class="card-text mb-4">IIS Bangalore - India best university to study engineering science</p>
+          <p class="card-text mb-4">IISC Bangalore - India best university to study engineering science</p>
         </div>
       </div>
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/thirdslide.jpg' %}" class="card-img-top" alt="...">
+        <img style="height:340px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBqykCVJJklQSJYeZLWUA-z85NnswMYZnOVQ&usqp=CAU" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
           <h5 class="card-title text-black mb-0">Queens Mary University</h5>
         </div>
@@ -193,14 +218,16 @@
         </div>
       </div>
     </div>
+    <br>
     <div class="d-flex justify-content-center">
-      <a href="{% url 'Login:university' %}" class="btn btn-outline-secondary">View More</a>
+      <a href="{% url 'Login:university' %}" class="viewmore btn btn-outline-secondary">View More</a>
       
     </div> 
+    <br>
     <!-- top universities stats -->
 
     <!-- top scholarships -->
-    <section id="mission" class="bg-outline-white ">
+    <section id="mission 2" class="bg-outline-white ">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -210,9 +237,9 @@
         </div>
       </div>
       
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center container">
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/firstslide.jpg' %}" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
           <h5 class="card-title text-black mb-0">IIS Banglore merit scholarship</h5>
         </div>
@@ -221,7 +248,7 @@
         </div>
       </div>
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/secondslide.jpg' %}" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
           <h5 class="card-title text-black mb-0">UIUC Champaign Scholar</h5>
         </div>
@@ -230,7 +257,7 @@
         </div>
       </div>
       <div class="card m-3" style="width: 33rem;">
-        <img src="{% static 'img/thirdslide.jpg' %}" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex align-items-end">
           <h5 class="card-title text-black mb-0">Queens mary Deep minds</h5>
         </div>
@@ -239,16 +266,17 @@
         </div>
       </div>
     </div>
-
+<br>
     <div class="d-flex justify-content-center">
-      <a href="{% url 'Login:scholarship' %}" class="btn btn-outline-secondary">View More</a>
+      <a href="{% url 'Login:scholarship' %}" class="viewmore btn btn-outline-secondary">View More</a>
      
     </div>    <!-- top universities stats -->
     <br/>
+    <br>
     <!-- top scholarships -->
     
       <!-- Mission -->
-      <section id="mission" class="bg-outline-white container">
+      <section id="mission mission1" class="bg-outline-white container">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
