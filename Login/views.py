@@ -34,6 +34,8 @@ def auckland_s(request):
     return render(request,"UofAuckland_s.html")
 def ottawa_s(request):
     return render(request,"Universityofottawas.html")
+def interview(request): 
+    return render(request,"interview.html")
 
 
 def parul(request):

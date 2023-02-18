@@ -1,2 +1,223 @@
-<h1>Prediction: {{ result}}</h1>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <!-- Bootstrap CSS -->
+   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/4378b71530.css" crossorigin="anonymous">
+    <title>Student Portal</title>
+  </head>
+  <body>
+    <!-- navigationbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: black">
+      <a class="navbar-brand" href="#" style="color:white;">LeverageGuild</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active " style="color: white;" href="{% url 'Login:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:scholarship' %}">Scholarship</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:university' %}">University</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;"  href="{% url 'Login:about' %}">About</a>
+          </li>
+          {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a href="#" style="color:white;" class="nav-item nav-link" id="user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{user.username}} <i class="fas fa-user sun-icon"></i>
+              </a>
+
+            <div class="dropdown-menu" aria-labelledby="user-dropdown">
+              <a class="nav-link btn btn-primary dropdown-item" href="{% url 'sprofile:edit_profile' %}" style="color: black;">View Profile</a>
+              <a class="nav-link btn btn-primary dropdown-item" href="#" onclick="location.href='/logout';" style="color: black;">Logout</a>
+            </div>
+          </div>
+          {% else %}
+          <li class="nav-item mx-1"></li>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link btn " href="{% url 'Login:SignUp' %}" style="color: white; background-color:rgb(88, 119, 119); margin-right:4px;">Signup</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link btn " href="{% url 'Login:Login' %}" style="color: white; background-color:rgb(88, 119, 119)">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="ml-auto">
+        <i class="fas fa-sun sun-icon ml-2"></i>
+      </div>
+    </nav>
+    
+    <!-- navigationbar -->
+   
+      <h1>Prediction{{result}}</h1>
+   
+
+
+    
+    <!--footer -->
+    <div class= "my-5 foot">
+        <!-- Footer -->
+        <footer
+                class="text-center text-lg-start text-white foot"
+                style="background-color: black"
+                >
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+              <!--Grid row-->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">
+                    LeverageGuild
+                  </h6>
+                  <p>We are a student portal dedicated to providing students with the best resources and information. Contact us for more information.</p>
+    
+                </div>
+                <!-- Grid column -->
+      
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">services</h6>
+                  <p>
+                    <a class="text-white">Scholarships</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Universities</a>
+                  </p>
+                  <p>
+                    <a class="text-white">about us</a>
+                  </p>
+                
+                </div>
+                <!-- Grid column -->
+      
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">
+                    Useful links
+                  </h6>
+                  <p>
+                    <a class="text-white">Your Account</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Create Account</a>
+                  </p>
+                  
+                  <p>
+                    <a class="text-white">Help</a>
+                  </p>
+                </div>
+      
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                  <p><i class="fas fa-home mr-3"></i>Parul university</p>
+                  <p><i class="fas fa-envelope mr-3"></i> LeverageGuild@gmail.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                  
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+      
+            <hr class="my-3">
+      
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                <!-- Grid column -->
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                  <!-- Copyright -->
+                  <div class="p-6">
+                    © 2023 Copyright:
+                    <a class="text-white" href="index.html"
+                       >LeverageGuild</a
+                      >
+                  </div>
+                  <!-- Copyright -->
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                  <!-- Facebook -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fab fa-facebook-f"></i
+                    ></a>
+      
+                  <!-- Twitter -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fab fa-twitter"></i
+                    ></a>
+      
+                  <!-- Google -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fab fa-google"></i
+                    ></a>
+      
+                  <!-- Instagram -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fab fa-instagram"></i
+                    ></a>
+                </div>
+                <!-- Grid column -->
+              </div>
+            </section>
+            <!-- Section: Copyright -->
+          </div>
+          <!-- Grid container -->
+        </footer>
+        <!-- Footer -->
+      </div>
+      <!-- End of .container -->
+      <!--footer -->
+   
+      <!-- Optional JavaScript -->
+        <script src="{% static 'home.js' %}"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/4378b71530.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+    </body>
+  </html>
 

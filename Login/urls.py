@@ -38,6 +38,7 @@ urlpatterns = [
     path('uuic_s',views.uuic_s,name='uuic_s'),
     path('bits_s',views.bits_s,name='bits_s'),
     path('ottawa_s',views.ottawa_s,name='ottawa_s'),
+    path('interview',views.interview,name='interview'),
   
      
 ]

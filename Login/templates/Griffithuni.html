@@ -10,9 +10,10 @@
     </head>
     <style>
 		body {
-			font-family: Arial, sans-serif;
-			text-align: justify;
-			padding: 20px;
+			font-family: 'Times New Roman', Times, serif;
+
+			
+			
 		}
 		h1 {
 			text-align: center;
@@ -26,21 +27,75 @@
 		}
 		li {
 			margin-bottom: 10px;
+			font-size:18px;
 		}
 		strong {
 			font-weight: bold;
 		}
+		
+		.container {
+			position: relative;
+			width: 1100px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 20px;
+			margin-left:200px;
+		  }
+		  
+		  .container .box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 320px;
+			height: 420px;
+			margin: 20px;
+			background: #121e27;
+		  }
+		  
+		  .container .box .box-content {
+			padding: 30px;
+			text-align: center;
+		  }
+		  
+		  .container .box .box-content .quote {
+			max-width: 48px;
+		  }
+		  
+		  .container .box .box-content p {
+			color: #fff;
+			padding: 20px 0;
+		  }
+		  
+		  .container .box .box-content .user {
+			max-width: 72px;
+			border-radius: 50%;
+		  }
+		  
+		  .container .box .box-content h3 {
+			color: #33d1a0;
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 1px;
+			font-weight: 600;
+		  }
+		  p{
+			font-size:18px;
+		  }
+		  
 	</style>
     <body>
         
 
-    	<div class="hero" id="top">
-    		<div class="hero-image"></div>
+    <div class="hero" id="top">
+    	<div class="hero-image"></div>
 			<h1>Griffith University</h1>
-    	</div>
-    	<div class="navbar-wrapper">
-	        <nav>
-	        	<div class="content">
+    </div>
+    <div class="navbar-wrapper">
+	    <nav>
+	        <div class="content">
 		        	<ul>
 		        		<li><a href="#vision"><p>About</p></a></li>
                         <li><a href="#team"><p>Criteria</p></a></li>
@@ -48,14 +103,17 @@
 		        		
 		        	</ul>
 		        	<ul class="right">
+						<li><a href="{% url 'Login:interview' %}"><p>Questions</p></a></li>
+
 		        		<li><a href="{% url 'sprofile:gu' %}"><p>Predict</p></a></li>
 						<li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
-                        <li><a href="{% url 'Login:home' %}"><p>Home</p></a></li>
 		        	</ul>
-		        </div>
-	        </nav>
-    	</div>
-		<section id="vision">
+		    </div>
+	    </nav>
+    </div>
+</div>
+
+	<section id="vision">
 			<div class="content">
 				<h1>We know the world can, and should, be a better place—for everyone.</h1>
                 <h2>Be here be remarable</h2>
@@ -63,24 +121,52 @@
                 <p>Social and environmental responsibility drive everything we do, from pioneering teaching in modern Asian studies and environmental science to our long-time support for First Peoples, social justice and sustainable practices.</p>
                 <p>Consistently ranking in the top 2 per cent of universities globally, our degrees are designed with industry in mind, the future in our sights, and social impact at heart.</p>
 			</div>
-		</section>
+	</section>
         
-		<section class="container my-5" id="team">
+	<section class="container my-5" id="team">
             <h1>Academic Entry Requirements for Master's in Information Technology</h1>
-	<ul>
-		<li><strong>Bachelor Degree in Information Technology:</strong> A Bachelor degree in Information Technology from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is required. Students with a Bachelor degree in Information Technology may be eligible for 40 credit points of advanced standing in place of listed IT foundation courses as determined by the Program Director.</li>
-		<li><strong>Bachelor Degree in Unrelated Discipline:</strong> A Bachelor degree in an unrelated discipline from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is also accepted.</li>
-	</ul>
-	<p>If you do not meet the academic entry criteria, you may be able to study the Masters Qualifying Program (9354) and qualify for entry into this Masters degree.</p>
-	<h2>English Language Requirements</h2>
-	<p>English language requirements apply to International applicants and other applicants whose previous study was undertaken in a language other than English. The minimum English language requirements for such applicants for entry to this program are as follows:</p>
-	<ul>
-		<li><strong>IELTS (Academic):</strong> A minimum overall band score of 6.5 with no sub-score of less than 6.0</li>
-		<li><strong>TOEFL:</strong> A minimum score of 575 on TOEFL or an internet-based (iBT) TOEFL score of 79 (no sub-score less than 19)</li>
-		<li><strong>ISLPR:</strong> No score less than 3+ in each skill of the ISLPR (conducted by ISLPR Language Services only)</li>
-		<li><strong>C1 Advanced or C2 Proficiency:</strong> A minimum overall score of 176 (no score less than 169) on C1 Advanced (formerly Cambridge Certificate in Advanced English) or C2 Proficiency (formerly Cambridge Certificate of Proficiency in English)</li>
-		<li><strong>Pearson Test of English (Academic):</strong> An overall score of 58 with no score less than 50</li>
-	</ul>
+		<ul>
+			<li><strong>Bachelor Degree in Information Technology:</strong> A Bachelor degree in Information Technology from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is required. Students with a Bachelor degree in Information Technology may be eligible for 40 credit points of advanced standing in place of listed IT foundation courses as determined by the Program Director.</li>
+			<li><strong>Bachelor Degree in Unrelated Discipline:</strong> A Bachelor degree in an unrelated discipline from a recognised University (or another tertiary education institution of equivalent standing) with a minimum GPA of 4.5 on a 7-point scale or equivalent is also accepted.</li>
+		</ul>
+		<p>If you do not meet the academic entry criteria, you may be able to study the Masters Qualifying Program (9354) and qualify for entry into this Masters degree.</p>
+		<h2>English Language Requirements</h2>
+		<p>English language requirements apply to International applicants and other applicants whose previous study was undertaken in a language other than English. The minimum English language requirements for such applicants for entry to this program are as follows:</p>
+		<ul>
+			<li><strong>IELTS (Academic):</strong> A minimum overall band score of 6.5 with no sub-score of less than 6.0</li>
+			<li><strong>TOEFL:</strong> A minimum score of 575 on TOEFL or an internet-based (iBT) TOEFL score of 79 (no sub-score less than 19)</li>
+			<li><strong>ISLPR:</strong> No score less than 3+ in each skill of the ISLPR (conducted by ISLPR Language Services only)</li>
+			<li><strong>C1 Advanced or C2 Proficiency:</strong> A minimum overall score of 176 (no score less than 169) on C1 Advanced (formerly Cambridge Certificate in Advanced English) or C2 Proficiency (formerly Cambridge Certificate of Proficiency in English)</li>
+			<li><strong>Pearson Test of English (Academic):</strong> An overall score of 58 with no score less than 50</li>
+		</ul>
+	</section>
+	<div class="container">
+		<div class="box">
+		  <div class="box-content">
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+			<p>Around 60% of students got placed in our course. The highest salary package offered was 12 LPA. The lowest salary package offered was 3 LPA. The top recruiting company is L&T. More than 70% of students got internships in this course.</p>
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/1.jpg" class="user">
+		
+			<h3>Yatri Pathak</h3>
+		  </div>
+		</div>
+		<div class="box">
+		  <div class="box-content">
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+			<p> It is the best college in terms of studies. Many students got internships in this course. On-campus and off-camus placements are also offered in this course. The highest salary package offered was 25 LPA.</p>
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/2.jpg" class="user">
+			<h3>Parth Kalavadiya</h3>
+		  </div>
+		</div>
+		<div class="box">
+		  <div class="box-content">
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+			<p>The facilities are excellent in this college. Wi-Fi is also available. Digital classrooms are available where notes and study materials are uploaded timely. There are 15 libraries in our college. Hostel facilities are better. </p>
+			<img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/3.jpg" class="user">
+			<h3>Drashti Sojitra</h3>
+		  </div>
+		</div>
+	  </div>
           <div class="card-container" id="product">
 
             <div class="card" id="high-gpa" style="display: none;">

@@ -8,61 +8,99 @@
         <!-- User styling -->
         <link rel="stylesheet" type="text/css" href="{% static 'alluni.css' %}">
     </head>
-    <style>
-        .admission-requirements {
-          font-family: Arial, sans-serif;
+      <style>
+        .eligibility-criteria {
+          font-family: 'Times New Roman', Times, serif;
           font-size: 16px;
-          line-height: 1.5;
-          color: #333;
+          margin: 16px;
+          text-align: left;
         }
-        .admission-requirements h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-         }
-
-        .admission-requirements ul {
-         list-style: none;
-         padding-left: 0;
-         margin-bottom: 20px;
-         }
-
-        .admission-requirements li {
+        p{
+          font-size: 16px;
+        }
+  
+        .criteria-header {
+          font-weight: bold;
           margin-bottom: 10px;
         }
 
-        .admission-requirements .requirement-title {
-              font-weight: bold;
-        }
-        title{
-          margin: auto;
-        }
+        
+      .container {
+        position: relative;
+        width: 1100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 20px;
+        margin-left:200px;
+      }
+      
+      .container .box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        height: 420px;
+        margin: 20px;
+        background: #121e27;
+      }
+      
+      .container .box .box-content {
+        padding: 30px;
+        text-align: center;
+      }
+      
+      .container .box .box-content .quote {
+        max-width: 48px;
+      }
+      
+      .container .box .box-content p {
+        color: #fff;
+        padding: 20px 0;
+      }
+      
+      .container .box .box-content .user {
+        max-width: 72px;
+        border-radius: 50%;
+      }
+      
+      .container .box .box-content h3 {
+        color: #33d1a0;
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+      
       </style>
     <body>
         
 
-    	<div class="hero" id="top">
-    		<div class="hero-image"></div>
-			<h1>Queen's Marry University</h1>
-    	</div>
-    	<div class="navbar-wrapper">
-	        <nav>
-	        	<div class="content">
-		        	<ul>
-		        		<li><a href="#vision"><p>About</p></a></li>
-                        <li><a href="#team"><p>Criteria</p></a></li>
-		        		<li><a href="#product"><p>Scholarships</p></a></li>
+  <div class="hero" id="top">
+    	<div class="hero-image"></div>
+			  <h1>Queen's Marry University</h1>
+  </div>
+  <div class="navbar-wrapper">
+	  <nav>
+	    <div class="content">
+		        <ul>
+		        	<li><a href="#vision"><p>About</p></a></li>
+                      <li><a href="#team"><p>Criteria</p></a></li>
+		        	<li><a href="#product"><p>Scholarships</p></a></li>
 		        		
-		        	</ul>
-		        	<ul class="right">
+		        </ul>
+		        <ul class="right">
+                <li><a href="{% url 'Login:interview' %}"><p>Questions</p></a></li>
+
 		        		<li><a href="{% url 'sprofile:qmu' %}"><p>Predict</p></a></li>
                 <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
-                        <li><a href="{% url 'Login:home' %}"><p>Home</p></a></li>
-		        	</ul>
-		        </div>
-	        </nav>
-    	</div>
-		<section id="vision">
+		        </ul>
+		  </div>
+	  </nav>
+  </div>
+	<section id="vision">
 			<div class="content">
 				<h1>With united powers</h1>
                 <h2>At Queen Mary University of London, we believe that a diversity of ideas helps us achieve the previously unthinkable.</h2>
@@ -70,12 +108,12 @@
                 <p>Our reformer heritage informs our conviction that great ideas can and should come from anywhere. It’s an approach that has brought results across the globe, from the communities of east London to the favelas of Rio de Janeiro.</p>
                 <p>We continue to embrace diversity of thought and opinion in everything we do, in the belief that when views collide, disciplines interact, and perspectives intersect, truly original thought takes form.</p>
 			</div>
-		</section>
+	</section>
         
-		<section class="container my-5" id="team">
-            <div class="admission-requirements">
-                <h3>Admission Requirements</h3>
-                <ul>
+	<section class="container my-5" id="team">
+      <div class="admission-requirements">
+          <h3>Admission Requirements</h3>
+              <ul>
                   <li>
                     <span class="requirement-title">First Degree:</span>
                     Achieve at least a pass in a full first degree that is equivalent to a UK undergraduate degree, with a pass in all final year modules.
@@ -87,13 +125,13 @@
                   <li>
                     Awards with failed modules in the final year of academic study will be considered on a case by case basis.
                   </li>
-                </ul>
+              </ul>
                 <h3>Pre-Masters in Humanities and Social Sciences</h3>
-                <ul>
+              <ul>
                   <li>Any degree subject can be considered.</li>
-                </ul>
+              </ul>
                 <h3>Pre-Masters in Finance and Economics</h3>
-                <ul>
+              <ul>
                   <li>
                     Students must have a satisfactory existing level of Mathematics, Statistics or Quantitative Methods.
                   </li>
@@ -103,8 +141,38 @@
                   <li>
                     Students from less quantitatively oriented degrees, such as Business, Management and Politics, are also welcome if they have focused on more quantitative elements of those degrees.
                   </li>
-                </ul>
+              </ul>
+      </div>
+  </section>
+
+  <div class="container">
+                <div class="box">
+                  <div class="box-content">
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                    <p>Around 60% of students got placed in our course. The highest salary package offered was 12 LPA. The lowest salary package offered was 3 LPA. The top recruiting company is L&T. More than 70% of students got internships in this course.</p>
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/1.jpg" class="user">
+                
+                    <h3>Yatri Pathak</h3>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-content">
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                    <p> It is the best college in terms of studies. Many students got internships in this course. On-campus and off-camus placements are also offered in this course. The highest salary package offered was 25 LPA.</p>
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/2.jpg" class="user">
+                    <h3>Parth Kalavadiya</h3>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-content">
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                    <p>The facilities are excellent in this college. Wi-Fi is also available. Digital classrooms are available where notes and study materials are uploaded timely. There are 15 libraries in our college. Hostel facilities are better. </p>
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/3.jpg" class="user">
+                    <h3>Drashti Sojitra</h3>
+                  </div>
+                </div>
               </div>
+
           <div class="card-container" id="product">
             <div class="card" id="high-gpa" style="display: none;">
               <div class="card-header">

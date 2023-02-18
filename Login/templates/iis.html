@@ -7,20 +7,73 @@
         <!-- <link rel="stylesheet" type="text/css" href="base.css"> -->
         <!-- User styling -->
         <link rel="stylesheet" type="text/css" href="{% static 'alluni.css' %}">
-    </head>
-    <style>
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        text-align: justify;
+      </head>
+      <style>
+        body{
         font-family: 'Times New Roman', Times, serif;
+        }
+        .eligibility-criteria {
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 16px;
+          text-align: left;
+        }
+  
+        .criteria-header {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
         
+      .container {
+        position: relative;
+        width: 1100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 20px;
+        margin-left:200px;
       }
       
-      h2, h3 {
+      .container .box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        height: 420px;
+        margin: 20px;
+        background: #121e27;
+      }
+      
+      .container .box .box-content {
+        padding: 30px;
         text-align: center;
       }
-    </style>
+      
+      .container .box .box-content .quote {
+        max-width: 48px;
+      }
+      
+      .container .box .box-content p {
+        color: #fff;
+        padding: 20px 0;
+      }
+      
+      .container .box .box-content .user {
+        max-width: 72px;
+        border-radius: 50%;
+      }
+      
+      .container .box .box-content h3 {
+        color: #33d1a0;
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+      
+      </style>
       
     <body>
         
@@ -39,9 +92,10 @@
 		        		
 		        	</ul>
 		        	<ul class="right">
+                <li><a href="{% url 'Login:interview' %}"><p>Questions</p></a></li>
+
 		        		<li><a href="{% url 'sprofile:iis' %}"><p>Predict</p></a></li>
                 <li><a href="{% url 'Login:generate_essay' %}"><p>Write An Application</p></a></li>
-                        <li><a href="{% url 'Login:home' %}"><p>Home</p></a></li>
 		        	</ul>
 		        </div>
 	        </nav>
@@ -57,7 +111,7 @@
 		</section>
         
 		<section class="container my-5" id="team">
-            <div class="container content">
+            <div class="container content" style="margin-left:75px;">
                 <h2>IISc Bangalore M.Tech Selection Criteria</h2>
                 <p>Admission to the M.Tech program will be granted on the basis of a valid score in GATE Entrance Exam. For some specializations, candidates are also required to appear in the written test or personal interview rounds as conducted by the institute itself.</p>
                 <h3>Given below is the specialization-wise selection criteria required for IISc Bangalore MTech admissions:</h3>
@@ -82,6 +136,35 @@
               </div>
               
           </section>
+
+          <div class="container">
+            <div class="box">
+              <div class="box-content">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                <p>Around 60% of students got placed in our course. The highest salary package offered was 12 LPA. The lowest salary package offered was 3 LPA. The top recruiting company is L&T. More than 70% of students got internships in this course.</p>
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/1.jpg" class="user">
+            
+                <h3>Yatri Pathak</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                <p> It is the best college in terms of studies. Many students got internships in this course. On-campus and off-camus placements are also offered in this course. The highest salary package offered was 25 LPA.</p>
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/2.jpg" class="user">
+                <h3>Parth Kalavadiya</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/quote.png" class="quote">
+                <p>The facilities are excellent in this college. Wi-Fi is also available. Digital classrooms are available where notes and study materials are uploaded timely. There are 15 libraries in our college. Hostel facilities are better. </p>
+                <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/3.jpg" class="user">
+                <h3>Drashti Sojitra</h3>
+              </div>
+            </div>
+          </div>
+
           <div class="card-container" id="product">
             <div class="card"  id = "high-gpa"style="display: none;">
               <div class="card-header">
